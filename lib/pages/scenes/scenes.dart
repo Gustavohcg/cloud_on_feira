@@ -310,37 +310,46 @@ class _ScenesPageState extends State<ScenesPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-          decoration: const BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage('assets/fundo_novo.jpg'),
-                  fit: BoxFit.cover)),
-          child: CustomScrollView(
-              shrinkWrap: true,
-              scrollDirection: Axis.vertical,
-              slivers: <Widget>[
-                const SliverAppBar(
-                  pinned: true,
-                  expandedHeight: 200.0,
-                  elevation: 0,
-                  actions: [Icon(Icons.location_on)],
-                  flexibleSpace: Header(
-                    image: 'assets/cena_fundo.png',
-                    organograma: false,
-                    title: 'Ambientes',
+      extendBody: false,
+      body: Column(
+        children: [
+          Expanded(
+            child: Container(
+              decoration: const BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage('assets/fundo_novo.jpg'),
+                      fit: BoxFit.cover)),
+              child: CustomScrollView(
+                shrinkWrap: true,
+                scrollDirection: Axis.vertical,
+                slivers: <Widget>[
+                  const SliverAppBar(
+                    pinned: true,
+                    expandedHeight: 200.0,
+                    elevation: 0,
+                    actions: [Icon(Icons.location_on)],
+                    flexibleSpace: Header(
+                      image: 'assets/cena_fundo.png',
+                      organograma: false,
+                      title: 'Cenas',
+                    ),
                   ),
-                ),
-                SliverToBoxAdapter(
-                  child: Stack(
-                    alignment: Alignment.topCenter,
-                    children: [
-                      // cabecalho(),
-                      textTitle(),
-                      card()
-                    ],
-                  ),
-                )
-              ])),
+                  SliverToBoxAdapter(
+                    child: Stack(
+                      alignment: Alignment.topCenter,
+                      children: [
+                        // cabecalho(),
+                        textTitle(),
+                        card()
+                      ],
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
       bottomNavigationBar: const SpiritBottomNavigationBar(),
     );
   }

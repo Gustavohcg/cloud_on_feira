@@ -389,7 +389,7 @@ class DashboardPage extends StatelessWidget {
       //     child: SpiritBottomNavigationBar(),
       //   ),
       // ),
-      extendBody: true,
+      extendBody: false,
       body: Container(
         decoration: const BoxDecoration(
             image: DecorationImage(
