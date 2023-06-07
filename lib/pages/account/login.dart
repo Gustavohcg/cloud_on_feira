@@ -1,5 +1,4 @@
 import 'package:cloud_on_feira/animations/login_animation.dart';
-import 'package:cloud_on_feira/pages/home/home.dart';
 import 'package:cloud_on_feira/widgets/show_bottom_dialog.dart';
 import 'package:cloud_on_feira/widgets/text_formfield.dart';
 import 'package:flutter/material.dart';
@@ -102,29 +101,6 @@ class _LoginPageState extends State<LoginPage> /* with LoginViewCommon  */ {
       enableDrag: false,
       isDismissible: false,
     );
-  }
-
-  Future loginBiometria() async {
-    if (_isProtectionEnabled) {
-      bool au = false;
-      try {
-        au = await _localAuth.authenticate /* authenticateWithBiometrics */ (
-          localizedReason: 'authenticate to access',
-          options: const AuthenticationOptions(
-              biometricOnly: true, useErrorDialogs: true, stickyAuth: true),
-        );
-        //_updateAuthStatus(au ? AuthState.loggingIn : AuthState.loggedOut);
-        /* removi navigator2 _routeService.updateAuthStatus(au ? AuthState.loggingIn : AuthState.loggedOut); */
-      } on PlatformException {
-        return const Text('erro');
-      }
-
-      if (au) {
-        Navigator.push(context,
-            MaterialPageRoute(builder: (context) => const DashboardPage()));
-      }
-    }
-    return 'erro';
   }
 
   /* @override
@@ -264,7 +240,7 @@ class _LoginPageState extends State<LoginPage> /* with LoginViewCommon  */ {
             'senha nao corresponde',
       ),
       FormBuilderValidators.required(
-          /* context,  */ errorText: 'deu bom fiote'),
+          /* context,  */ errorText: 'informe sua senha'),
     ]);
   }
 
@@ -329,11 +305,44 @@ class _LoginPageState extends State<LoginPage> /* with LoginViewCommon  */ {
     );
   }
 
+  Future<bool> isLocalAuth() async {
+    bool au1 = true;
+    bool au2 = await _localAuth.canCheckBiometrics;
+    //bool au3 = await loginRepository.getStoredPassword() != null;
+
+    return au1 && au2;
+  }
+
+  Future loginBiometria() async {
+    if (_isProtectionEnabled) {
+      bool au = false;
+      try {
+        au = await _localAuth.authenticate(
+          localizedReason: 'authenticate to access',
+          options: const AuthenticationOptions(
+              biometricOnly: true, useErrorDialogs: true, stickyAuth: true),
+        );
+        //_updateAuthStatus(au ? AuthState.loggingIn : AuthState.loggedOut);
+        /* removi navigator2 _routeService.updateAuthStatus(au ? AuthState.loggingIn : AuthState.loggedOut); */
+      } on PlatformException {
+        return false;
+      }
+
+      if (au) {
+        // ignore: use_build_context_synchronously
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const LoginAnimation()));
+            return true;
+      }
+    }
+    return false;
+  }
+
   Widget biometria() {
     return Container(
       padding: const EdgeInsets.only(top: 5),
       child: FutureBuilder(
-        future: loginBiometria(),
+        future: isLocalAuth(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Waiting();
@@ -342,7 +351,10 @@ class _LoginPageState extends State<LoginPage> /* with LoginViewCommon  */ {
               return InkWell(
                 onTap: () async {
                   ShowBottomDialog().showBottomDialog(
+                    sucesso: await loginBiometria(),
                     context: context,
+                    errorText: 'Erro na identificação biométrica',
+                    onPressedError: () => Navigator.pop(context),
                   );
                 },
                 child: const Icon(
