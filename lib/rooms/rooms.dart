@@ -1,9 +1,18 @@
+import 'package:cloud_on_feira/pages/resources/individual_resources.dart';
 import 'package:cloud_on_feira/widgets/bottom_navigation_bar.dart';
 import 'package:cloud_on_feira/widgets/drawer.dart';
 import 'package:flutter/material.dart';
 
 import '/widgets/header.dart';
 import '/widgets/waiting.dart';
+
+class Resource {
+  String name;
+  Widget icon;
+  bool ativado = false;
+
+  Resource(this.name, this.icon, this.ativado);
+}
 
 class RoomsPage extends StatefulWidget {
   /* final Function(Room) onRoomTap;
@@ -21,6 +30,47 @@ class RoomsPage extends StatefulWidget {
 
 class _RoomsPageState extends State<RoomsPage> {
   late List<String> rooms = ['sala', 'garagem'];
+  Resource r0 = Resource(
+      'name', const Icon(Icons.abc), true); //Ocupado pelo Add Resource na grid
+  Resource r1 = Resource(
+      'Luz principal',
+      const Icon(
+        Icons.lightbulb_outline_rounded,
+      ),
+      false);
+  Resource r2 = Resource(
+      'Luz ambiente',
+      const Icon(
+        Icons.lightbulb_outline_rounded,
+      ),
+      false);
+  Resource r3 = Resource(
+      'Porta',
+      const Icon(
+        Icons.security_outlined,
+      ),
+      false);
+  Resource r4 =
+      Resource('Movimento', const Icon(Icons.security_outlined), false);
+
+  Resource r5 = Resource(
+      'Luz quadro',
+      const Icon(
+        Icons.lightbulb_outline_rounded,
+      ),
+      false);
+
+  Resource r6 = Resource('ADD Resource', const Icon(Icons.abc),
+      true); //Ocupado pelo Add Resource na grid
+  Resource r7 = Resource(
+      'Portão',
+      const Icon(
+        Icons.garage_outlined,
+      ),
+      false);
+
+  late List<Resource> resources1 = [r0, r1, r2, r3, r4, r5];
+  late List<Resource> resources2 = [r6, r7];
 
   @override
   void initState() {
@@ -92,10 +142,6 @@ class _RoomsPageState extends State<RoomsPage> {
       shrinkWrap: true,
       itemCount: rooms.length,
       itemBuilder: (context, index) {
-        List<dynamic> gridList = [''];
-        // if (rooms[index].isNotEmpty) {
-        //   gridList.addAll(rooms[index]);
-        // }
         return Container(
           //Essa key é necessária para poder arrastar os itens da lista
           key: Key(rooms[index]),
@@ -127,12 +173,11 @@ class _RoomsPageState extends State<RoomsPage> {
                 ],
               ),
               Container(
-                height: 200,
+                height: 220,
                 decoration: BoxDecoration(
-                  color: Color.fromRGBO(255, 255, 255, 0.6),
+                  color: const Color.fromRGBO(255, 255, 255, 0.8),
                   borderRadius: BorderRadius.circular(8.0),
                   border: Border.all(
-                    color: const Color(0xffFF6600),
                     width: 1,
                   ),
                 ),
@@ -142,47 +187,145 @@ class _RoomsPageState extends State<RoomsPage> {
                     physics: const BouncingScrollPhysics(),
                     scrollDirection: Axis.horizontal,
                     slivers: <Widget>[
-                      SliverGrid(
-                        gridDelegate:
-                            const SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 2,
-                          crossAxisSpacing: 4,
-                          mainAxisSpacing: 4,
-                        ),
-                        delegate: SliverChildBuilderDelegate(
-                          childCount: gridList.length,
-                          (context, i) {
-                            if (i == 0) {
-                              return addResourceContainer();
-                            } else {
-                              return InkWell(
-                                child: Container(
-                                  decoration: const BoxDecoration(
-                                      borderRadius:
-                                          BorderRadius.all(Radius.circular(8)),
-                                      color: Colors.amber),
-                                  child: Column(
-                                    children: [
-                                      Padding(
-                                        padding: const EdgeInsets.all(10),
-                                        child: Text(rooms[index]),
-                                      )
-                                    ],
-                                  ),
-                                ),
-                                onTap: () {
-                                  // presenter.goToIndividualResourcePage(
-                                  //     rooms[index].resources[i].id!,
-                                  //     rooms[index].id!,
-                                  //     rooms[index]
-                                  //         .resources[i]
-                                  //         .description!);
+                      index == 0
+                          ? SliverGrid(
+                              gridDelegate:
+                                  const SliverGridDelegateWithFixedCrossAxisCount(
+                                crossAxisCount: 2,
+                                crossAxisSpacing: 4,
+                                mainAxisSpacing: 4,
+                              ),
+                              delegate: SliverChildBuilderDelegate(
+                                childCount: resources1.length,
+                                (context, i) {
+                                  if (i == 0) {
+                                    return addResourceContainer();
+                                  } else {
+                                    return InkWell(
+                                      child: Container(
+                                          decoration: BoxDecoration(
+                                            color:  resources1[i].ativado
+                                              ? const Color.fromRGBO(
+                                                  76, 175, 80, 0.1)
+                                              : const Color.fromRGBO(
+                                                  244, 67, 54, 0.1),
+                                              border: Border.all(
+                                                  color: resources1[i].ativado
+                                                      ? const Color.fromRGBO(
+                                                          76, 175, 80, 1)
+                                                      : const Color.fromRGBO(
+                                                          244, 67, 54, 1),
+                                                  width: 1),
+                                              //image: DecorationImage(image: AssetImage('images/fundo.jpg'),fit: BoxFit.cover),
+                                              borderRadius:
+                                                  BorderRadius.circular(8)),
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(10),
+                                            child: Column(
+                                              children: [
+                                                FittedBox(
+                                                    child: Row(
+                                                  children: [
+                                                    Text(
+                                                      resources1[i].name,
+                                                    ),
+                                                    resources1[i].icon,
+                                                  ],
+                                                )),
+                                                /*      const SizedBox(
+                                                  height: 10,
+                                                ), */
+                                                IconButton(
+                                                  icon: const Icon(
+                                                    Icons
+                                                        .power_settings_new_rounded,
+                                                    size: 30,
+                                                  ),
+                                                  onPressed: () {
+                                                    resources1[i].ativado =
+                                                        !resources1[i].ativado;
+                                                  },
+                                                )
+                                              ],
+                                            ),
+                                          )),
+                                      onTap: () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    IndividualResources(
+                                                        resource:
+                                                            resources1[i])));
+                                      },
+                                    );
+                                  }
                                 },
-                              );
-                            }
-                          },
-                        ),
-                      ),
+                              ),
+                            )
+                          : SliverGrid(
+                              gridDelegate:
+                                  const SliverGridDelegateWithFixedCrossAxisCount(
+                                crossAxisCount: 2,
+                                crossAxisSpacing: 4,
+                                mainAxisSpacing: 4,
+                              ),
+                              delegate: SliverChildBuilderDelegate(
+                                childCount: resources2.length,
+                                (context, i) {
+                                  if (i == 0) {
+                                    return addResourceContainer();
+                                  } else {
+                                    return InkWell(
+                                      child: Container(
+                                          decoration: BoxDecoration(
+                                              border: Border.all(
+                                                  color: resources2[i].ativado
+                                                      ? Colors.green
+                                                      : Colors.red,
+                                                  width: 1),
+                                              //image: DecorationImage(image: AssetImage('images/fundo.jpg'),fit: BoxFit.cover),
+                                              borderRadius:
+                                                  BorderRadius.circular(8)),
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(10),
+                                            child: Column(
+                                              children: [
+                                                FittedBox(
+                                                    child: Row(
+                                                  children: [
+                                                    Text(resources2[i].name),
+                                                    resources2[i].icon
+                                                  ],
+                                                )),
+                                                /*  const SizedBox(
+                                                  height: 10,
+                                                ), */
+                                                IconButton(
+                                                  icon: const Icon(
+                                                    Icons
+                                                        .power_settings_new_rounded,
+                                                    size: 30,
+                                                  ),
+                                                  onPressed: () {},
+                                                )
+                                              ],
+                                            ),
+                                          )),
+                                      onTap: () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    IndividualResources(
+                                                        resource:
+                                                            resources2[i])));
+                                      },
+                                    );
+                                  }
+                                },
+                              ),
+                            )
                     ],
                   ),
                 ),
