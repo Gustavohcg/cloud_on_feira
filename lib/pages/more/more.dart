@@ -1,3 +1,4 @@
+import 'package:cloud_on_feira/pages/dispositivos/dispositivos.dart';
 import 'package:cloud_on_feira/widgets/bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -134,7 +135,9 @@ class MorePage extends StatelessWidget {
       //   presenter.openScenes();
       //   break;
       case 3:
-        // presenter.openDevicesConfig();
+        print('dis');
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const DispositivosPage()));
         break;
       case 4:
         // presenter.openAutomationConfig();
