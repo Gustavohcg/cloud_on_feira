@@ -1,7 +1,7 @@
-import 'package:cloud_on_feira/pages/more/more.dart';
 import 'package:cloud_on_feira/pages/home/home.dart';
-import 'package:cloud_on_feira/pages/scenes/scenes.dart';
+import 'package:cloud_on_feira/pages/more/more.dart';
 import 'package:cloud_on_feira/pages/rooms/rooms.dart';
+import 'package:cloud_on_feira/pages/scenes/scenes.dart';
 import 'package:flutter/material.dart';
 
 //import '/pages/initial_page.dart';
@@ -31,19 +31,19 @@ class _SpiritBottomNavigationBarState extends State<SpiritBottomNavigationBar> {
         // GoRouter.of(context).goNamed("SecurityPage");
         break;
       case 1: // Scenes
-        Navigator.push(context,
+        Navigator.pushReplacement(context,
             MaterialPageRoute(builder: (context) => const ScenesPage()));
         break;
       case 2: // Dashboard
-        Navigator.push(context,
+        Navigator.pushReplacement(context,
             MaterialPageRoute(builder: (context) => const DashboardPage()));
         break;
       case 3: // Rooms
-        Navigator.push(context,
+        Navigator.pushReplacement(context,
             MaterialPageRoute(builder: (context) => const RoomsPage()));
         break;
       case 4: //More
-        Navigator.push(
+        Navigator.pushReplacement(
             context, MaterialPageRoute(builder: (context) => const MorePage()));
         break;
     }
@@ -84,29 +84,29 @@ class _SpiritBottomNavigationBarState extends State<SpiritBottomNavigationBar> {
           /* backgroundColor: /* Colors.transparent */ theme.scaffoldBackgroundColor, */
         ),
         BottomNavigationBarItem(
-          icon: const Icon(Icons.meeting_room_outlined),
-          label: 'Cenas',
-          backgroundColor: theme.backgroundColor,
-          /* backgroundColor: /* Colors.transparent */ theme.scaffoldBackgroundColor, */
-        ),
+            icon: const Icon(Icons.meeting_room_outlined),
+            label: 'Cenas',
+            backgroundColor: theme.backgroundColor
+            /* backgroundColor: /* Colors.transparent */ theme.scaffoldBackgroundColor, */
+            ),
         BottomNavigationBarItem(
-          icon: const Icon(Icons.movie_outlined),
-          label: 'Dashboard',
-          backgroundColor: theme.backgroundColor,
-          /* backgroundColor: /* Colors.transparent */ theme.scaffoldBackgroundColor, */
-        ),
+            icon: const Icon(Icons.movie_outlined),
+            label: 'Dashboard',
+            backgroundColor: theme.backgroundColor
+            /* backgroundColor: /* Colors.transparent */ theme.scaffoldBackgroundColor, */
+            ),
         BottomNavigationBarItem(
-          icon: const Icon(Icons.dashboard_outlined),
-          label: 'Ambientes',
-          backgroundColor: theme.backgroundColor,
-          /* backgroundColor: /* Colors.transparent */ theme.scaffoldBackgroundColor, */
-        ),
+            icon: const Icon(Icons.dashboard_outlined),
+            label: 'Ambientes',
+            backgroundColor: theme.backgroundColor
+            /* backgroundColor: /* Colors.transparent */ theme.scaffoldBackgroundColor, */
+            ),
         BottomNavigationBarItem(
-          icon: const Icon(Icons.menu),
-          label: 'Mais',
-          backgroundColor: theme.backgroundColor,
-          /* backgroundColor: /* Colors.transparent */ theme.scaffoldBackgroundColor, */
-        ),
+            icon: const Icon(Icons.menu),
+            label: 'Mais',
+            backgroundColor: theme.backgroundColor
+            /* backgroundColor: /* Colors.transparent */ theme.scaffoldBackgroundColor, */
+            ),
       ],
       currentIndex: _selectedIndex,
       onTap: (selectedIndex) => _onItemTapped(selectedIndex, context),

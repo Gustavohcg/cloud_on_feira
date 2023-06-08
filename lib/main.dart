@@ -1,7 +1,7 @@
 import 'package:cloud_on_feira/pages/account/login.dart';
 import 'package:cloud_on_feira/pages/home/home.dart';
-import 'package:cloud_on_feira/pages/scenes/scenes.dart';
 import 'package:cloud_on_feira/pages/rooms/rooms.dart';
+import 'package:cloud_on_feira/pages/scenes/scenes.dart';
 import 'package:cloud_on_feira/themes/dark_theme.dart';
 import 'package:cloud_on_feira/themes/light_theme.dart';
 import 'package:flutter/material.dart';

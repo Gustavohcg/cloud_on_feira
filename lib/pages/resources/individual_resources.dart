@@ -1,4 +1,4 @@
-import 'package:cloud_on_feira/rooms/rooms.dart';
+import 'package:cloud_on_feira/pages/rooms/rooms.dart';
 import 'package:flutter/material.dart';
 
 class IndividualResources extends StatefulWidget {
@@ -61,7 +61,6 @@ class _IndividualResourcesState extends State<IndividualResources> {
                   Text(
                     '- Lâmpada',
                   ),
-                  Icon(Icons.lightbulb_outline_rounded)
                 ],
               )
             ],
@@ -72,23 +71,319 @@ class _IndividualResourcesState extends State<IndividualResources> {
   }
 
   Widget buildResourceLuzAmbiente() {
-    return Placeholder();
+    return SingleChildScrollView(
+      child: Card(
+        child: Padding(
+          padding: const EdgeInsets.all(12.0),
+          child: Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(''),
+                  Text(
+                    widget.resource.name,
+                    style: const TextStyle(
+                        fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                  widget.resource.icon
+                ],
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              const Text(
+                  'Descrição: iluminação ambiente para assistir filmes '),
+              const SizedBox(
+                height: 20,
+              ),
+              const Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [Text('Tipo de recurso: Iluminação')]),
+              const SizedBox(
+                height: 20,
+              ),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Dispositivos associados ao recurso:',
+                    textAlign: TextAlign.center,
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Text(
+                    '- Módulo interruptor 2 canais',
+                  ),
+                ],
+              )
+            ],
+          ),
+        ),
+      ),
+    );
   }
 
   Widget buildResourcePorta() {
-    return Placeholder();
+    return SingleChildScrollView(
+      child: Card(
+        child: Padding(
+          padding: const EdgeInsets.all(12.0),
+          child: Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(''),
+                  Text(
+                    widget.resource.name,
+                    style: const TextStyle(
+                        fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                  widget.resource.icon
+                ],
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              const Text(
+                  'Descrição: recurso para saber quando a porta da sala é aberta'),
+              const SizedBox(
+                height: 20,
+              ),
+              const Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [Text('Tipo de recurso: Segurança')]),
+              const SizedBox(
+                height: 20,
+              ),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Dispositivos associados ao recurso:',
+                    textAlign: TextAlign.center,
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Text(
+                    '- Sensor magnético',
+                  ),
+                ],
+              )
+            ],
+          ),
+        ),
+      ),
+    );
   }
 
   Widget buildResourceMovimento() {
-    return Placeholder();
+    return SingleChildScrollView(
+      child: Card(
+        child: Padding(
+          padding: const EdgeInsets.all(12.0),
+          child: Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(''),
+                  Text(
+                    widget.resource.name,
+                    style: const TextStyle(
+                        fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                  widget.resource.icon
+                ],
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              const Text(
+                  'Descrição: recurso para verificar movimentação no corredor'),
+              const SizedBox(
+                height: 20,
+              ),
+              const Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [Text('Tipo de recurso: segurança')]),
+              const SizedBox(
+                height: 20,
+              ),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Dispositivos associados ao recurso:',
+                    textAlign: TextAlign.center,
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Text(
+                    '- Sensor IVP',
+                  ),
+                ],
+              )
+            ],
+          ),
+        ),
+      ),
+    );
   }
 
   Widget buildResourceLuzQuadro() {
-    return Placeholder();
+    return SingleChildScrollView(
+      child: Card(
+        child: Padding(
+          padding: const EdgeInsets.all(12.0),
+          child: Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(''),
+                  Text(
+                    widget.resource.name,
+                    style: const TextStyle(
+                        fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                  widget.resource.icon
+                ],
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              const Text('Descrição: luz do quadro perto da janela da sala'),
+              const SizedBox(
+                height: 20,
+              ),
+              const Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [Text('Tipo de recurso: Iluminação')]),
+              const SizedBox(
+                height: 20,
+              ),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Dispositivos associados ao recurso:',
+                    textAlign: TextAlign.center,
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Text(
+                    '- Interruptor 2 botões',
+                  ),
+                ],
+              )
+            ],
+          ),
+        ),
+      ),
+    );
+    ;
   }
 
   Widget buildResourcePortao() {
-    return Placeholder();
+    return SingleChildScrollView(
+      child: Card(
+        child: Padding(
+          padding: const EdgeInsets.all(12.0),
+          child: Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(''),
+                  Text(
+                    widget.resource.name,
+                    style: const TextStyle(
+                        fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                  widget.resource.icon
+                ],
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              const Text('Descrição: abertura e fechamento do portão'),
+              const SizedBox(
+                height: 20,
+              ),
+              const Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [Text('Tipo de recurso: Portão')]),
+              const SizedBox(
+                height: 20,
+              ),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Dispositivos associados ao recurso:',
+                    textAlign: TextAlign.center,
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Text(
+                    '- Is triflex Connect',
+                  ),
+                ],
+              )
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  retWidgets() {
+    switch (widget.resource.name) {
+      case 'Luz principal':
+        return buildResourceLuzPrincipal();
+      case 'Luz ambiente':
+        return buildResourceLuzAmbiente();
+      case 'Porta':
+        return buildResourcePorta();
+      case 'Movimento':
+        return buildResourceMovimento();
+      case 'Luz quadro':
+        return buildResourceLuzQuadro();
+      case 'Portão':
+        return buildResourcePortao();
+    }
   }
 
   @override
@@ -97,6 +392,14 @@ class _IndividualResourcesState extends State<IndividualResources> {
       appBar: AppBar(
         centerTitle: true,
         title: Text(widget.resource.name),
+        actions: const [
+          Padding(
+            padding: EdgeInsets.all(12),
+            child: Row(
+              children: [Icon(Icons.location_on), Text('Casa')],
+            ),
+          )
+        ],
       ),
       body: Column(children: [
         Expanded(
@@ -104,10 +407,10 @@ class _IndividualResourcesState extends State<IndividualResources> {
           padding: const EdgeInsets.all(12),
           decoration: const BoxDecoration(
               image: DecorationImage(
-            image: AssetImage('assets/fundo.jpg'),
+            image: AssetImage('assets/fundo_novo.jpg'),
             fit: BoxFit.cover,
           )),
-          child: buildResourceLuzPrincipal(),
+          child: retWidgets(),
         ))
       ]),
     );
