@@ -1,4 +1,4 @@
-import 'package:cloud_on_feira/rooms/rooms.dart';
+import 'package:cloud_on_feira/pages/rooms/rooms.dart';
 import 'package:flutter/material.dart';
 
 class IndividualResources extends StatefulWidget {

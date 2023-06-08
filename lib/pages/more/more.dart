@@ -135,7 +135,6 @@ class MorePage extends StatelessWidget {
       //   presenter.openScenes();
       //   break;
       case 3:
-        print('dis');
         Navigator.push(context,
             MaterialPageRoute(builder: (context) => const DispositivosPage()));
         break;
