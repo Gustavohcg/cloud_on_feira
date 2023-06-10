@@ -40,7 +40,7 @@ class _MyAppState extends State<MyApp> {
       routes: {
         '/': (context) => LoginPage(fbKey: loginnFBKey),
         '/dashboard': (context) => const DashboardPage(),
-        'scenes': (context) => const ScenesPage(),
+        'scenes': (context) =>  ScenesPage(),
         'rooms': (context) => const RoomsPage()
       },
       // builder: (context, child) {

@@ -32,7 +32,7 @@ class _SpiritBottomNavigationBarState extends State<SpiritBottomNavigationBar> {
         break;
       case 1: // Scenes
         Navigator.pushReplacement(context,
-            MaterialPageRoute(builder: (context) => const ScenesPage()));
+            MaterialPageRoute(builder: (context) =>  ScenesPage()));
         break;
       case 2: // Dashboard
         Navigator.pushReplacement(context,
