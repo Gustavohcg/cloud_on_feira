@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:math' as math;
 
 import 'package:cloud_on_feira/widgets/bottom_navigation_bar.dart';
 import 'package:cloud_on_feira/widgets/drawer.dart';
@@ -16,7 +15,7 @@ class Cenas {
 }
 
 class ScenesPage extends StatefulWidget {
-  ScenesPage({super.key});
+  const ScenesPage({super.key});
 
   @override
   State<ScenesPage> createState() => _ScenesPageState();
@@ -87,7 +86,7 @@ class _ScenesPageState extends State<ScenesPage> {
                         setState(() {
                           cenas[index].ativando = true;
                         });
-                        _timer = Timer(const Duration(seconds: 3), () {
+                        _timer = Timer(const Duration(seconds: 2), () {
                           setState(() {
                             cenas[index].ativando = false;
                             ShowBottomDialog().showBottomDialog(
@@ -107,20 +106,17 @@ class _ScenesPageState extends State<ScenesPage> {
                           children: [
                             Padding(
                               padding: const EdgeInsets.all(8.0),
-                              child: Text(
-                                cenas[index].name,
-                                textAlign: TextAlign.center,
-                              ),
+                              child: !cenas[index].ativando
+                                  ? cenas[index].icon
+                                  : Lottie.asset('assets/amp.json',
+                                      fit: BoxFit.contain, height: 40),
                             ),
                             const SizedBox(
                               height: 15,
                             ),
-                            !cenas[index].ativando
-                                ? cenas[index].icon
-                                : Lottie.asset('assets/amp.json',
-                                    fit: BoxFit.contain, height: 40),
-                            const SizedBox(
-                              height: 5,
+                            Text(
+                              cenas[index].name,
+                              textAlign: TextAlign.center,
                             ),
                           ],
                         ),
@@ -194,34 +190,5 @@ class _ScenesPageState extends State<ScenesPage> {
       ),
       bottomNavigationBar: const SpiritBottomNavigationBar(),
     );
-  }
-}
-
-class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
-  final double minHeight;
-  final double maxHeight;
-  final Widget child;
-
-  _SliverAppBarDelegate({
-    required this.minHeight,
-    required this.maxHeight,
-    required this.child,
-  });
-
-  @override
-  double get minExtent => minHeight;
-  @override
-  double get maxExtent => math.max(maxHeight, minHeight);
-  @override
-  Widget build(
-      BuildContext context, double shrinkOffset, bool overlapsContent) {
-    return SizedBox.expand(child: child);
-  }
-
-  @override
-  bool shouldRebuild(_SliverAppBarDelegate oldDelegate) {
-    return maxHeight != oldDelegate.maxHeight ||
-        minHeight != oldDelegate.minHeight ||
-        child != oldDelegate.child;
   }
 }

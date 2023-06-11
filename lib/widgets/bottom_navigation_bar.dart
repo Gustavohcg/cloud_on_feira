@@ -2,6 +2,7 @@ import 'package:cloud_on_feira/pages/home/home.dart';
 import 'package:cloud_on_feira/pages/more/more.dart';
 import 'package:cloud_on_feira/pages/rooms/rooms.dart';
 import 'package:cloud_on_feira/pages/scenes/scenes.dart';
+import 'package:cloud_on_feira/pages/security/security.dart';
 import 'package:flutter/material.dart';
 
 //import '/pages/initial_page.dart';
@@ -28,11 +29,12 @@ class _SpiritBottomNavigationBarState extends State<SpiritBottomNavigationBar> {
     //context.read<NavigationBarNotifier>().selectedIndex = index;
     switch (index) {
       case 0: // Alarm
-        // GoRouter.of(context).goNamed("SecurityPage");
+        Navigator.pushReplacement(context,
+            MaterialPageRoute(builder: (context) => const SecurityPage()));
         break;
       case 1: // Scenes
         Navigator.pushReplacement(context,
-            MaterialPageRoute(builder: (context) =>  ScenesPage()));
+            MaterialPageRoute(builder: (context) => const ScenesPage()));
         break;
       case 2: // Dashboard
         Navigator.pushReplacement(context,

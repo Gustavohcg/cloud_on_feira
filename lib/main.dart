@@ -2,6 +2,7 @@ import 'package:cloud_on_feira/pages/account/login.dart';
 import 'package:cloud_on_feira/pages/home/home.dart';
 import 'package:cloud_on_feira/pages/rooms/rooms.dart';
 import 'package:cloud_on_feira/pages/scenes/scenes.dart';
+import 'package:cloud_on_feira/pages/security/security.dart';
 import 'package:cloud_on_feira/themes/dark_theme.dart';
 import 'package:cloud_on_feira/themes/light_theme.dart';
 import 'package:flutter/material.dart';
@@ -40,8 +41,9 @@ class _MyAppState extends State<MyApp> {
       routes: {
         '/': (context) => LoginPage(fbKey: loginnFBKey),
         '/dashboard': (context) => const DashboardPage(),
-        'scenes': (context) =>  ScenesPage(),
-        'rooms': (context) => const RoomsPage()
+        'scenes': (context) => const ScenesPage(),
+        'rooms': (context) => const RoomsPage(),
+        'security': (context) => const SecurityPage()
       },
       // builder: (context, child) {
       //   return Scaffold(
