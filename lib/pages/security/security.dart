@@ -1,6 +1,10 @@
+import 'dart:async';
+import 'dart:math';
+
 import 'package:cloud_on_feira/widgets/bottom_navigation_bar.dart';
 import 'package:cloud_on_feira/widgets/drawer.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class SecurityPage extends StatefulWidget {
   const SecurityPage({super.key});
@@ -12,6 +16,38 @@ class SecurityPage extends StatefulWidget {
 class _SecurityPageState extends State<SecurityPage> {
   bool armeTotal = false;
   bool armeParcial = false;
+  Random random = Random();
+
+  Future<void> _disparo(BuildContext context, int setor) {
+    return showDialog<void>(
+      context: context,
+      builder: (BuildContext context) {
+        return Theme(
+            data: ThemeData(dialogBackgroundColor: Colors.white),
+            child: AlertDialog(
+              shadowColor: Colors.red,
+              icon: Lottie.asset('assets/siren.json',
+                  fit: BoxFit.contain, height: 80),
+              title: const Text('Disparo de alarme'),
+              content: Text('Alarme disparado pelo sensor so setor $setor'),
+              actions: <Widget>[
+                TextButton(
+                  style: TextButton.styleFrom(
+                    textStyle: Theme.of(context).textTheme.labelLarge,
+                  ),
+                  child: const Text(
+                    'OK',
+                    style: TextStyle(color: Color(0xffFF6600)),
+                  ),
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                ),
+              ],
+            ));
+      },
+    );
+  }
 
   Future<void> _dialogBuilder(
       BuildContext context, String totalParcial, bool armado) {
@@ -100,6 +136,15 @@ class _SecurityPageState extends State<SecurityPage> {
                                   armeTotal = !armeTotal;
                                 });
                                 _dialogBuilder(context, 'total', armeTotal);
+                                if (armeTotal) {
+                                  int numeroSorteado = random.nextInt(2) + 3;
+                                  int setor = random.nextInt(10) + 1;
+                                  late Timer _timer;
+                                  _timer = Timer(
+                                      Duration(seconds: numeroSorteado), () {
+                                    _disparo(context, setor);
+                                  });
+                                }
                               },
                               child: Container(
                                 decoration: BoxDecoration(
