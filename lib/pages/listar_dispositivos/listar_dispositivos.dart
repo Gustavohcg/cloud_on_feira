@@ -30,7 +30,14 @@ class ListarDispositivos extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Dispositivos'),
         centerTitle: true,
-        actions: const [],
+        actions: const [
+          Padding(
+            padding: EdgeInsets.all(12),
+            child: Row(
+              children: [Icon(Icons.location_on), Text('Casa')],
+            ),
+          )
+        ],
       ),
       body: Container(
         decoration: const BoxDecoration(

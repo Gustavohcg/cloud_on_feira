@@ -134,7 +134,6 @@ class _ScenesPageState extends State<ScenesPage> {
   @override
   Widget build(BuildContext context) {
     return BasePage(
-      title: 'Cenas',
       body: Column(
         children: [
           Expanded(

@@ -8,10 +8,15 @@ import 'package:cloud_on_feira/themes/dark_theme.dart';
 import 'package:cloud_on_feira/themes/light_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 
 void main() {
+  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   runApp(const MyApp());
 }
+
+
 
 class MyApp extends StatefulWidget {
   static GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
@@ -31,6 +36,7 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
+      FlutterNativeSplash.remove();
     lightTheme = LightTheme().buildLightTheme();
     darkTheme = DarkTheme().buildDarkTheme();
     return MaterialApp(

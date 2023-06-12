@@ -1,7 +1,5 @@
-import 'package:cloud_on_feira/pages/listar_dispositivos/listar_dispositivos.dart';
 import 'package:cloud_on_feira/widgets/card.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 class DispositivosPage /* <T extends Device> */
     extends StatefulWidget {
@@ -16,29 +14,28 @@ class DispositivosPage /* <T extends Device> */
   _DispositivosPageState createState() => _DispositivosPageState();
 }
 
-class _DispositivosPageState<T>
-    extends State  {
+class _DispositivosPageState<T> extends State {
   _DispositivosPageState();
- List<String> devices = [
-      'is',
-      'sensor magnético',
-      'sensor ivp',
-      'sirene pgm',
-      'interruptor 2 botões',
-      'modulo interruptor 1 canal',
-      'modulo interruptor 2 canais',
-      'lâmpada'
-    ];
-      List<String> rooms = [
-      'Garagem',
-      'Sala',
-      'Sala',
-      'Sala',
-      'Sala',
-      'Sala',
-      'Sala',
-      'Sala'
-    ];
+  List<String> devices = [
+    'is',
+    'sensor magnético',
+    'sensor ivp',
+    'sirene pgm',
+    'interruptor 2 botões',
+    'modulo interruptor 1 canal',
+    'modulo interruptor 2 canais',
+    'lâmpada'
+  ];
+  List<String> rooms = [
+    'Garagem',
+    'Sala',
+    'Sala',
+    'Sala',
+    'Sala',
+    'Sala',
+    'Sala',
+    'Sala'
+  ];
 
   @override
   void initState() {
@@ -92,14 +89,20 @@ class _DispositivosPageState<T>
   //   );
   // }
 
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        actions: const [Icon(Icons.location_on)],
-      ),
+          title: const Text('Dispositivos'),
+          centerTitle: true,
+          actions: const [
+            Padding(
+              padding: EdgeInsets.all(12),
+              child: Row(
+                children: [Icon(Icons.location_on), Text('Casa')],
+              ),
+            ),
+          ]),
       body: Container(
         decoration: const BoxDecoration(
             image: DecorationImage(
@@ -132,7 +135,7 @@ class _DispositivosPageState<T>
                               fit: BoxFit.fitHeight,
                             ),
                           ),
-                          title:  Row(
+                          title: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text(
@@ -160,69 +163,72 @@ class _DispositivosPageState<T>
                               // _addDeviceIcon(),
                             ],
                           ),
-                          children:  <Widget>[
+                          children: <Widget>[
                             ListView.builder(
                               shrinkWrap: true,
                               itemCount: devices.length,
                               itemBuilder: (context, index) {
                                 return Padding(
-                                padding: const EdgeInsets.all(12.0),
-                                child: Card(
-                                  shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(16)),
-                                  margin: EdgeInsets.zero,
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(10),
-                                    child: Column(
-                                      children: [
-                                        RichText(
-                                          textAlign: TextAlign.start,
-                                          text: TextSpan(
-                                            children: <TextSpan>[
-                                              const TextSpan(
-                                                  text: 'Nome:',
-                                                  style: TextStyle(
+                                  padding: const EdgeInsets.all(12.0),
+                                  child: Card(
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(16)),
+                                    margin: EdgeInsets.zero,
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(10),
+                                      child: Column(
+                                        children: [
+                                          RichText(
+                                            textAlign: TextAlign.start,
+                                            text: TextSpan(
+                                              children: <TextSpan>[
+                                                const TextSpan(
+                                                    text: 'Nome:',
+                                                    style: TextStyle(
+                                                        fontSize: 13,
+                                                        color: Colors.black)),
+                                                TextSpan(
+                                                    text:
+                                                        ' ${devices[index].toUpperCase()}',
+                                                    style: const TextStyle(
                                                       fontSize: 13,
-                                                      color: Colors.black)),
-                                              TextSpan(
-                                                  text:
-                                                      ' ${devices[index].toUpperCase()}',
-                                                  style: const TextStyle(
-                                                    fontSize: 13,
-                                                    color: Colors.black,
-                                                    fontWeight: FontWeight.bold,
-                                                  )),
-                                            ],
+                                                      color: Colors.black,
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                    )),
+                                              ],
+                                            ),
                                           ),
-                                        ),
-                                        Row(
-                                          mainAxisAlignment: MainAxisAlignment.center,
-                                          children: [
-                                            const Text('Ambiente: '),
-                                            Text(
-                                              rooms[index],
-                                              style: const TextStyle(
-                                                  fontWeight: FontWeight.w700),
-                                            )
-                                          ],
-                                        )
-                                      ],
+                                          Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              const Text('Ambiente: '),
+                                              Text(
+                                                rooms[index],
+                                                style: const TextStyle(
+                                                    fontWeight:
+                                                        FontWeight.w700),
+                                              )
+                                            ],
+                                          )
+                                        ],
+                                      ),
                                     ),
                                   ),
-                                ),
-                              );
+                                );
                               },
                             )
-                          //  ListTile(
-                          //   title:  Text('is \n  sensor magnético \n sensor ivp \nsirene pgm\n  interruptor 2 botões\n modulo interruptor 1 canal\n modulo interruptor 2 canais'),
-                          //  )
+                            //  ListTile(
+                            //   title:  Text('is \n  sensor magnético \n sensor ivp \nsirene pgm\n  interruptor 2 botões\n modulo interruptor 1 canal\n modulo interruptor 2 canais'),
+                            //  )
                           ],
                         ),
                       ),
                     )
                     // spiritsListWidget(),
-                    
-                   
+
                     // addSpiritButton(),
                   ],
                 ),
