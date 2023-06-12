@@ -1,8 +1,3 @@
-import 'package:cloud_on_feira/pages/home/home.dart';
-import 'package:cloud_on_feira/pages/more/more.dart';
-import 'package:cloud_on_feira/pages/rooms/rooms.dart';
-import 'package:cloud_on_feira/pages/scenes/scenes.dart';
-import 'package:cloud_on_feira/pages/security/security.dart';
 import 'package:flutter/material.dart';
 
 //import '/pages/initial_page.dart';
@@ -17,67 +12,54 @@ class SpiritBottomNavigationBar extends StatefulWidget {
 }
 
 class _SpiritBottomNavigationBarState extends State<SpiritBottomNavigationBar> {
-  int _selectedIndex = 2;
-
-  void _onItemTapped2(int index, BuildContext context) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
-
   void _onItemTapped(int index, BuildContext context) {
     //context.read<NavigationBarNotifier>().selectedIndex = index;
     switch (index) {
       case 0: // Alarm
-        Navigator.pushReplacement(context,
-            MaterialPageRoute(builder: (context) => const SecurityPage()));
+        Navigator.pushReplacementNamed(context, 'security');
         break;
       case 1: // Scenes
-        Navigator.pushReplacement(context,
-            MaterialPageRoute(builder: (context) => const ScenesPage()));
+        Navigator.pushReplacementNamed(context, 'scenes');
         break;
       case 2: // Dashboard
-        Navigator.pushReplacement(context,
-            MaterialPageRoute(builder: (context) => const DashboardPage()));
+        Navigator.pushReplacementNamed(context, '/dashboard');
         break;
       case 3: // Rooms
-        Navigator.pushReplacement(context,
-            MaterialPageRoute(builder: (context) => const RoomsPage()));
+        Navigator.pushReplacementNamed(context, 'rooms');
         break;
       case 4: //More
-        Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (context) => const MorePage()));
+        Navigator.pushReplacementNamed(context, 'more');
         break;
     }
   }
 
-  // static int _calculateSelectedIndex(BuildContext context) {
-  //   // final String location = GoRouterState.of(context).location;
-  //   final currentRoute = ModalRoute.of(context)?.settings.name;
+  static int _calculateSelectedIndex(BuildContext context) {
+    Route currentRoute = ModalRoute.of(context) as Route;
 
-  //   if (currentRoute == '/') {
-  //     return 0;
-  //   }
-  //   if (currentRoute == '/scenes') {
-  //     return 1;
-  //   }
-  //   if (currentRoute == '/dashboard') {
-  //     return 2;
-  //   }
-  //   if (currentRoute == '/rooms') {
-  //     return 3;
-  //   }
-  //   // if (location.startsWith(MorePage.routeName)) {
-  //   //   return 4;
-  //   // }
-  //   return 2;
-  // }
+    String currentPageName = currentRoute.settings.name!;
+
+    if (currentPageName.contains("security")) {
+      return 0;
+    }
+    if (currentPageName.contains("scenes")) {
+      return 1;
+    }
+    if (currentPageName.contains("/dashboard")) {
+      return 2;
+    }
+    if (currentPageName.contains("rooms")) {
+      return 3;
+    }
+    if (currentPageName.contains("more")) {
+      return 4;
+    }
+    return 2;
+  }
 
   @override
   Widget build(BuildContext context) {
     var theme = BottomNavigationBarTheme.of(context);
     return BottomNavigationBar(
-      showUnselectedLabels: true,
       items: <BottomNavigationBarItem>[
         BottomNavigationBarItem(
           icon: const Icon(Icons.security_outlined),
@@ -110,13 +92,10 @@ class _SpiritBottomNavigationBarState extends State<SpiritBottomNavigationBar> {
             /* backgroundColor: /* Colors.transparent */ theme.scaffoldBackgroundColor, */
             ),
       ],
-      currentIndex: _selectedIndex,
+      currentIndex: _calculateSelectedIndex(context),
       onTap: (selectedIndex) => _onItemTapped(selectedIndex, context),
-
-      /* showSelectedLabels: false,
-      showUnselectedLabels: false,
-      /* backgroundColor: /* Colors.transparent */ theme.scaffoldBackgroundColor, */
-      elevation: 0, */
+      showSelectedLabels: true,
+      showUnselectedLabels: true,
     );
   }
 }

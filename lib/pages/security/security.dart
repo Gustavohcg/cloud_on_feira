@@ -87,9 +87,7 @@ class _SecurityPageState extends State<SecurityPage> {
 
   @override
   Widget build(BuildContext context) {
-    return BasePage(
-      title: 'Segurança',
-      body: Column(
+    return BasePage(title: 'Segurança', body: Column(
         children: [
           Expanded(
             child: Container(
@@ -139,7 +137,7 @@ class _SecurityPageState extends State<SecurityPage> {
                                   late Timer _timer;
                                   _timer = Timer(
                                       Duration(seconds: numeroSorteado), () {
-                                    _disparo(context, setor);
+                                    BasePage.disparo(setor);
                                   });
                                 }
                               },
@@ -239,7 +237,8 @@ class _SecurityPageState extends State<SecurityPage> {
             ),
           ),
         ],
-      ),
-    );
+      ),);
+    
+
   }
 }

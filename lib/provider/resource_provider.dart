@@ -5,7 +5,7 @@ class ResourceProvider extends ChangeNotifier {
 
   bool get ativado => _ativado;
 
-  set ativado(bool val) {
+  setAtivado(bool val) {
     _ativado = val;
     notifyListeners();
   }

@@ -1,5 +1,9 @@
+import 'dart:async';
+
+import 'package:cloud_on_feira/main.dart';
 import 'package:cloud_on_feira/widgets/drawer.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 import 'widgets/bottom_navigation_bar.dart';
 
@@ -10,6 +14,37 @@ class BasePage extends StatefulWidget {
 
   @override
   State<BasePage> createState() => _BasePageState();
+
+  static Future<void> disparo(int setor) {
+    return showDialog<void>(
+      context: MyApp.navigatorKey.currentContext!,
+      builder: (BuildContext context) {
+        return Theme(
+            data: ThemeData(dialogBackgroundColor: Colors.white),
+            child: AlertDialog(
+              shadowColor: Colors.red,
+              icon: Lottie.asset('assets/siren.json',
+                  fit: BoxFit.contain, height: 80),
+              title: const Text('Disparo de alarme'),
+              content: Text('Alarme disparado pelo sensor no setor $setor'),
+              actions: <Widget>[
+                TextButton(
+                  style: TextButton.styleFrom(
+                    textStyle: Theme.of(context).textTheme.labelLarge,
+                  ),
+                  child: const Text(
+                    'OK',
+                    style: TextStyle(color: Color(0xffFF6600)),
+                  ),
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                ),
+              ],
+            ));
+      },
+    );
+  }
 }
 
 class _BasePageState extends State<BasePage> {
@@ -19,7 +54,7 @@ class _BasePageState extends State<BasePage> {
       drawer: const MenuDrawer(),
       extendBody: false,
       body: widget.body,
-      bottomNavigationBar: const SpiritBottomNavigationBar(),
+      bottomNavigationBar:  SpiritBottomNavigationBar(),
     );
   }
 }
