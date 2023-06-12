@@ -21,8 +21,8 @@ class DashboardPage extends StatelessWidget {
           children: [
             Container(
               decoration: BoxDecoration(
-            color: const Color.fromRGBO(255, 255, 255, 0.3),
-            borderRadius: BorderRadius.circular(20)),
+                  color: const Color.fromRGBO(255, 255, 255, 0.3),
+                  borderRadius: BorderRadius.circular(20)),
               child: Container(
                 width: 320,
                 height: 200,
@@ -145,24 +145,15 @@ class DashboardPage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 32.0),
-            Container(
-              decoration: BoxDecoration(
-            color: const Color.fromRGBO(255, 255, 255, 0.3),
-            borderRadius: BorderRadius.circular(20)),
+            SingleChildScrollView(
+              physics: const NeverScrollableScrollPhysics(),
               child: Container(
-                width: 320,
-                height: 200,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20.0),
-                  border: Border.all(
-                    color: Colors.transparent,
-                    width: 1.0,
-                  ),
-                ),
+                    color: const Color.fromRGBO(255, 255, 255, 0.3),
+                    borderRadius: BorderRadius.circular(20)),
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       const Text(
                         'Cenas',
@@ -174,96 +165,256 @@ class DashboardPage extends StatelessWidget {
                       const SizedBox(
                         height: 5,
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Column(
-                            children: [
-                              Container(
-                                width: 65,
-                                height: 130,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(12),
-                                  border: Border.all(color: Colors.orange),
+                      GridView.count(
+                          physics: const NeverScrollableScrollPhysics(),
+                          childAspectRatio: 0.5,
+                          crossAxisCount: 4,
+                          shrinkWrap: true,
+                          children: [
+                            Column(
+                              children: [
+                                Expanded(
+                                  child: Container(
+                                    width: 65,
+                                    height: 130,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(12),
+                                      border: Border.all(color: Colors.orange),
+                                    ),
+                                    child: Container(
+                                      child: const Expanded(
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: [
+                                            Icon(
+                                                Icons.lightbulb_outline_rounded,
+                                                color: Colors.black),
+                                            // Divider(
+                                            //   color: Colors.black,
+                                            // ),
+                                            SizedBox(
+                                              height: 20,
+                                            ),
+                                            Text(
+                                              'Cinema',
+                                              style: TextStyle(
+                                                  fontSize: 10,
+                                                  color: Colors.black),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
                                 ),
-                              ),
-                              const SizedBox(
-                                height: 10,
-                              ),
-                              const Text(
-                                'Texto',
-                                style: TextStyle(fontSize: 11),
-                              ),
-                            ],
-                          ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          Column(
-                            children: [
-                              Container(
-                                width: 65,
-                                height: 130,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(12),
-                                  border: Border.all(color: Colors.orange),
+                                const SizedBox(
+                                  height: 10,
                                 ),
-                              ),
-                              const SizedBox(
-                                height: 10,
-                              ),
-                              const Text(
-                                'Texto',
-                                style: TextStyle(fontSize: 11),
-                              ),
-                            ],
-                          ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          Column(
-                            children: [
-                              Container(
-                                width: 65,
-                                height: 130,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(12),
-                                  border: Border.all(color: Colors.orange),
+                                // const Text(
+                                //   'Sala',
+                                //   style: TextStyle(
+                                //       fontSize: 11, color: Colors.black),
+                                // ),
+                              ],
+                            ),
+                            Column(
+                              children: [
+                                Expanded(
+                                  child: Container(
+                                    width: 65,
+                                    height: 130,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(12),
+                                      border: Border.all(color: Colors.orange),
+                                    ),
+                                    child: Container(
+                                      child: const Expanded(
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: [
+                                            Icon(Icons.security_outlined,
+                                                color: Colors.black),
+                                            // Divider(
+                                            //   color: Colors.black,
+                                            // ),
+                                            SizedBox(
+                                              height: 20,
+                                            ),
+                                            Text(
+                                              'Sair de casa',
+                                              style: TextStyle(
+                                                  fontSize: 10,
+                                                  color: Colors.black),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
                                 ),
-                              ),
-                              const SizedBox(
-                                height: 10,
-                              ),
-                              const Text(
-                                'Texto',
-                                style: TextStyle(fontSize: 11),
-                              ),
-                            ],
-                          ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          Column(
-                            children: [
-                              Container(
-                                width: 65,
-                                height: 130,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(12),
-                                  border: Border.all(color: Colors.orange),
+                                const SizedBox(
+                                  height: 10,
                                 ),
-                              ),
-                              const SizedBox(
-                                height: 10,
-                              ),
-                              const Text(
-                                'Texto',
-                                style: TextStyle(fontSize: 11),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
+                                // const Text(
+                                //   'Sala',
+                                //   style: TextStyle(
+                                //       fontSize: 11, color: Colors.black),
+                                // ),
+                              ],
+                            ),
+                            Column(
+                              children: [
+                                Expanded(
+                                  child: Container(
+                                    width: 65,
+                                    height: 130,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(12),
+                                      border: Border.all(color: Colors.orange),
+                                    ),
+                                    child: Container(
+                                      child: const Expanded(
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: [
+                                            Icon(
+                                                Icons.lightbulb_outline_rounded,
+                                                color: Colors.black),
+                                            // Divider(
+                                            //   color: Colors.black,
+                                            // ),
+                                            SizedBox(
+                                              height: 20,
+                                            ),
+                                            Text(
+                                              'Chegar em casa',
+                                              style: TextStyle(
+                                                  fontSize: 10,
+                                                  color: Colors.black),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                const SizedBox(
+                                  height: 10,
+                                ),
+                                // const Text(
+                                //   'Sala',
+                                //   style: TextStyle(
+                                //       fontSize: 11, color: Colors.black),
+                                // ),
+                              ],
+                            ),
+                            Column(
+                              children: [
+                                Expanded(
+                                  child: Container(
+                                    width: 65,
+                                    height: 130,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(12),
+                                      border: Border.all(color: Colors.orange),
+                                    ),
+                                    child: Container(
+                                      child: const Expanded(
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: [
+                                            Icon(
+                                                Icons.lightbulb_outline_rounded,
+                                                color: Colors.black),
+                                            // Divider(
+                                            //   color: Colors.black,
+                                            // ),
+                                            SizedBox(
+                                              height: 20,
+                                            ),
+                                            Text(
+                                              'Acordar',
+                                              style: TextStyle(
+                                                  fontSize: 10,
+                                                  color: Colors.black),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                const SizedBox(
+                                  height: 10,
+                                ),
+                                // const Text(
+                                //   'Sala',
+                                //   style: TextStyle(
+                                //       fontSize: 11, color: Colors.black),
+                                // ),
+                              ],
+                            ),
+                            Column(
+                              children: [
+                                Expanded(
+                                  child: Container(
+                                    width: 65,
+                                    height: 130,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(12),
+                                      border: Border.all(color: Colors.orange),
+                                    ),
+                                    child: Container(
+                                      child: const Expanded(
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: [
+                                            Icon(Icons.security_outlined,
+                                                color: Colors.black),
+                                            // Divider(
+                                            //   color: Colors.black,
+                                            // ),
+                                            SizedBox(
+                                              height: 20,
+                                            ),
+                                            Text(
+                                              'Dormir',
+                                              style: TextStyle(
+                                                  fontSize: 10,
+                                                  color: Colors.black),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                const SizedBox(
+                                  height: 10,
+                                ),
+                                // const Text(
+                                //   'Sala',
+                                //   style: TextStyle(
+                                //       fontSize: 11, color: Colors.black),
+                                // ),
+                              ],
+                            ),
+                          ]),
                     ],
                   ),
                 ),
@@ -273,565 +424,575 @@ class DashboardPage extends StatelessWidget {
             SingleChildScrollView(
               physics: const NeverScrollableScrollPhysics(),
               child: Container(
-                 decoration: BoxDecoration(
-                  color: const Color.fromRGBO(255, 255, 255, 0.3),
-                  borderRadius: BorderRadius.circular(20)),
+                decoration: BoxDecoration(
+                    color: const Color.fromRGBO(255, 255, 255, 0.3),
+                    borderRadius: BorderRadius.circular(20)),
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
                     children: [
-                        const Text('Ambientes e Recursos', style: TextStyle(fontSize: 15, color: Color(0xffFF6600), fontWeight: FontWeight.w500 ),),
-                      const SizedBox(height: 5,),
-                      GridView.count(
-                        physics: const NeverScrollableScrollPhysics(),
-                        childAspectRatio: 0.5,
-                        crossAxisCount: 4,
-                        shrinkWrap: true,
-                                            children: [
-                                           Column(
-                            children: [
-                              Expanded(
-                                child: Container(
-                                  width: 65,
-                                  height: 130,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(12),
-                                    border: Border.all(color: Colors.orange),
-                                  ),
-                                  child: Container(
-                                    child: const Expanded(
-                                      child: Column(
-                                        mainAxisAlignment: MainAxisAlignment.center,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.center,
-                                        children: [
-                                          Icon(Icons.lightbulb_outline_rounded,
-                                              color: Colors.black),
-                                          Divider(
-                                            color: Colors.black,
-                                          ),
-                                          Text(
-                                            'Luz principal',
-                                            style: TextStyle(
-                                                fontSize: 10, color: Colors.black),
-                                          ),
-                                          
-                                          
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              const SizedBox(
-                                height: 10,
-                              ),
-                              const Text(
-                                'Sala',
-                                style: TextStyle(fontSize: 11, color: Colors.black),
-                              ),
-                            ],
-                          ),
-                           Column(
-                            children: [
-                              Expanded(
-                                child: Container(
-                                  width: 65,
-                                  height: 130,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(12),
-                                    border: Border.all(color: Colors.orange),
-                                  ),
-                                  child: Container(
-                                    child: const Expanded(
-                                      child: Column(
-                                        mainAxisAlignment: MainAxisAlignment.center,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.center,
-                                        children: [
-                                          Icon(Icons.security_outlined,
-                                              color: Colors.black),
-                                          Divider(
-                                            color: Colors.black,
-                                          ),
-                                          Text(
-                                            'Porta',
-                                            style: TextStyle(
-                                                fontSize: 10, color: Colors.black),
-                                          ),
-                                          
-                                          
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              const SizedBox(
-                                height: 10,
-                              ),
-                              const Text(
-                                'Sala',
-                                style: TextStyle(fontSize: 11, color: Colors.black),
-                              ),
-                            ],
-                          ),
-                           Column(
-                            children: [
-                              Expanded(
-                                child: Container(
-                                  width: 65,
-                                  height: 130,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(12),
-                                    border: Border.all(color: Colors.orange),
-                                  ),
-                                  child: Container(
-                                    child: const Expanded(
-                                      child: Column(
-                                        mainAxisAlignment: MainAxisAlignment.center,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.center,
-                                        children: [
-                                          Icon(Icons.lightbulb_outline_rounded,
-                                              color: Colors.black),
-                                          Divider(
-                                            color: Colors.black,
-                                          ),
-                                          Text(
-                                            'Luz quadro',
-                                            style: TextStyle(
-                                                fontSize: 10, color: Colors.black),
-                                          ),
-                                          
-                                          
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              const SizedBox(
-                                height: 10,
-                              ),
-                              const Text(
-                                'Sala',
-                                style: TextStyle(fontSize: 11, color: Colors.black),
-                              ),
-                            ],
-                          ),
-                           Column(
-                            children: [
-                              Expanded(
-                                child: Container(
-                                  width: 65,
-                                  height: 130,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(12),
-                                    border: Border.all(color: Colors.orange),
-                                  ),
-                                  child: Container(
-                                    child: const Expanded(
-                                      child: Column(
-                                        mainAxisAlignment: MainAxisAlignment.center,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.center,
-                                        children: [
-                                          Icon(Icons.lightbulb_outline_rounded,
-                                              color: Colors.black),
-                                          Divider(
-                                            color: Colors.black,
-                                          ),
-                                          Text(
-                                            'Luz ambiente',
-                                            style: TextStyle(
-                                                fontSize: 10, color: Colors.black),
-                                          ),
-                                          
-                                          
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              const SizedBox(
-                                height: 10,
-                              ),
-                              const Text(
-                                'Sala',
-                                style: TextStyle(fontSize: 11, color: Colors.black),
-                              ),
-                            ],
-                          ),
-                           Column(
-                            children: [
-                              Expanded(
-                                child: Container(
-                                  width: 65,
-                                  height: 130,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(12),
-                                    border: Border.all(color: Colors.orange),
-                                  ),
-                                  child: Container(
-                                    child: const Expanded(
-                                      child: Column(
-                                        mainAxisAlignment: MainAxisAlignment.center,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.center,
-                                        children: [
-                                          Icon(Icons.security_outlined,
-                                              color: Colors.black),
-                                          Divider(
-                                            color: Colors.black,
-                                          ),
-                                          Text(
-                                            'Movimento',
-                                            style: TextStyle(
-                                                fontSize: 10, color: Colors.black),
-                                          ),
-                                          
-                                          
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              const SizedBox(
-                                height: 10,
-                              ),
-                              const Text(
-                                'Sala',
-                                style: TextStyle(fontSize: 11, color: Colors.black),
-                              ),
-                            ],
-                          ),
-                          Column(
-                            children: [
-                              Expanded(
-                                child: Container(
-                                  width: 65,
-                                  height: 130,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(12),
-                                    border: Border.all(color: Colors.orange),
-                                  ),
-                                  child: Container(
-                                    child: const Expanded(
-                                      child: Column(
-                                        mainAxisAlignment: MainAxisAlignment.center,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.center,
-                                        children: [
-                                          Icon(Icons.garage_outlined,
-                                              color: Colors.black),
-                                          Divider(
-                                            color: Colors.black,
-                                          ),
-                                          Text(
-                                            'Portão',
-                                            style: TextStyle(
-                                                fontSize: 10, color: Colors.black),
-                                          ),
-                                          
-                                          
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              const SizedBox(
-                                height: 10,
-                              ),
-                              const Text(
-                                'Garagem',
-                                style: TextStyle(fontSize: 11, color: Colors.black),
-                              ),
-                            ],
-                          )
-                                            ]
-                         
-                      
+                      const Text(
+                        'Ambientes e Recursos',
+                        style: TextStyle(
+                            fontSize: 15,
+                            color: Color(0xffFF6600),
+                            fontWeight: FontWeight.w500),
                       ),
-                        //                       Container(
-                        //   decoration: BoxDecoration(
-                        // color: const Color.fromRGBO(255, 255, 255, 0.3),
-                        // borderRadius: BorderRadius.circular(20)),
-                        //   child: Container(
-                        //     width: 320,
-                        //     height: 200,
-                        //     decoration: BoxDecoration(
-                        //       borderRadius: BorderRadius.circular(20.0),
-                        //       border: Border.all(
-                        //         color: Colors.transparent,
-                        //         width: 1.0,
-                        //       ),
-                        //     ),
-                        //     child: Padding(
-                        //       padding: const EdgeInsets.all(8.0),
-                        //       child: Column(
-                        //         mainAxisAlignment: MainAxisAlignment.center,
-                        //         children: [
-                        //           const Text(
-                        //             'Ambientes e Recursos',
-                        //             style: TextStyle(
-                        //                 fontSize: 15,
-                        //                 color: Color(0xffFF6600),
-                        //                 fontWeight: FontWeight.w500),
-                        //           ),
-                        //           const SizedBox(
-                        //             height: 5,
-                        //           ),
-                        //           Row(
-                        //             mainAxisAlignment: MainAxisAlignment.center,
-                        //             children: [
-                        //               Column(
-                        //                 children: [
-                        //                   Container(
-                        //                     width: 65,
-                        //                     height: 130,
-                        //                     decoration: BoxDecoration(
-                        //                       borderRadius: BorderRadius.circular(12),
-                        //                       border: Border.all(color: Colors.orange),
-                        //                     ),
-                        //                     child: Container(
-                        //                       child: const Expanded(
-                        //                         child: Column(
-                        //                           mainAxisAlignment: MainAxisAlignment.center,
-                        //                           crossAxisAlignment:
-                        //                               CrossAxisAlignment.center,
-                        //                           children: [
-                        //                             Icon(Icons.lightbulb_outline_rounded,
-                        //                                 color: Colors.black),
-                        //                             Divider(
-                        //                               color: Colors.black,
-                        //                             ),
-                        //                             Text(
-                        //                               'Luz principal',
-                        //                               style: TextStyle(
-                        //                                   fontSize: 10, color: Colors.black),
-                        //                             ),
-                                                    
-                                                    
-                        //                           ],
-                        //                         ),
-                        //                       ),
-                        //                     ),
-                        //                   ),
-                        //                   const SizedBox(
-                        //                     height: 10,
-                        //                   ),
-                        //                   const Text(
-                        //                     'Sala',
-                        //                     style: TextStyle(fontSize: 11, color: Colors.black),
-                        //                   ),
-                        //                 ],
-                        //               ),
-                        //               const SizedBox(
-                        //                 width: 10,
-                        //               ),
-                        //               Column(
-                        //                 children: [
-                        //                   Container(
-                        //                       width: 65,
-                        //                       height: 130,
-                        //                       decoration: BoxDecoration(
-                        //                         borderRadius: BorderRadius.circular(12),
-                        //                         border: Border.all(color: Colors.orange),
-                        //                       ),
-                        //                       child: Container(
-                        //                         child: const Column(
-                        //                           mainAxisAlignment:
-                        //                               MainAxisAlignment.center,
-                        //                           crossAxisAlignment:
-                        //                               CrossAxisAlignment.center,
-                        //                           children: [
-                        //                             Icon(Icons.lightbulb_outline_rounded,
-                        //                                 color: Colors.black),
-                        //                             Divider(
-                        //                               color: Colors.black,
-                        //                             ),
-                        //                             Text('Luz quadro',
-                        //                               style: TextStyle(
-                        //                                   fontSize: 10,
-                        //                                   color: Colors.black)),
-                        //                             // Text('Porta',
-                        //                             //     style: TextStyle(
-                        //                             //         fontSize: 10,
-                        //                             //         color: Colors.black)),
-                        //                             // Text('Movimento',
-                        //                             //     style: TextStyle(
-                        //                             //         fontSize: 10,
-                        //                             //         color: Colors.black)),
-                        //                             //         Padding(padding: EdgeInsets.only(bottom: 16))
-                        //                           ],
-                        //                         ),
-                        //                       )),
-                        //                   const SizedBox(
-                        //                     height: 10,
-                        //                   ),
-                        //                   const Text(
-                        //                     'Sala',
-                        //                     style: TextStyle(fontSize: 11, color: Colors.black),
-                        //                   ),
-                        //                 ],
-                        //               ),
-                        //               const SizedBox(
-                        //                 width: 10,
-                        //               ),
-                        //               Column(
-                        //                 children: [
-                        //                   Container(
-                        //                     width: 65,
-                        //                     height: 130,
-                        //                     decoration: BoxDecoration(
-                        //                       borderRadius: BorderRadius.circular(12),
-                        //                       border: Border.all(color: Colors.orange),
-                        //                     ),
-                        //                     child: Container(
-                        //                       child: const Column(
-                        //                         mainAxisAlignment: MainAxisAlignment.center,
-                        //                         crossAxisAlignment:
-                        //                             CrossAxisAlignment.center,
-                        //                         children: [
-                        //                           Icon(Icons.lightbulb_outline_rounded,
-                        //                               color: Colors.black),
-                        //                           Divider(
-                        //                             color: Colors.black,
-                        //                           ),
-                        //                           Text('Luz ambiente',
-                        //                               style: TextStyle(
-                        //                                   fontSize: 10,
-                        //                                   color: Colors.black)),
-                        //                           // Text(
-                        //                           //   'Portão',
-                        //                           //   style: TextStyle(
-                        //                           //       fontSize: 10, color: Colors.black),
-                        //                           // ),
-                        //                           // Padding(padding: EdgeInsets.only(bottom: 22))
-                        //                         ],
-                        //                       ),
-                        //                     ),
-                        //                   ),
-                        //                   const SizedBox(
-                        //                     height: 10,
-                        //                   ),
-                        //                   const Text(
-                        //                     'Sala',
-                        //                     style: TextStyle(fontSize: 11, color: Colors.black),
-                        //                   ),
-                        //                 ],
-                        //               ),
-                        //               const SizedBox(
-                        //                 width: 10,
-                        //               ),
-                        //               Column(
-                        //                 children: [
-                        //                   Container(
-                        //                     width: 65,
-                        //                     height: 130,
-                        //                     decoration: BoxDecoration(
-                        //                       borderRadius: BorderRadius.circular(12),
-                        //                       border: Border.all(color: Colors.orange),
-                        //                     ),
-                        //                     child: Container(
-                        //                         child: const Column(
-                        //                           mainAxisAlignment:
-                        //                               MainAxisAlignment.center,
-                        //                           crossAxisAlignment:
-                        //                               CrossAxisAlignment.center,
-                        //                           children: [
-                        //                             Icon(Icons.garage_outlined,
-                        //                                 color: Colors.black),
-                        //                             Divider(
-                        //                               color: Colors.black,
-                        //                             ),
-                        //                             Text('Portão',
-                        //                               style: TextStyle(
-                        //                                   fontSize: 10,
-                        //                                   color: Colors.black)),
-                        //                             // Text('Porta',
-                        //                             //     style: TextStyle(
-                        //                             //         fontSize: 10,
-                        //                             //         color: Colors.black)),
-                        //                             // Text('Movimento',
-                        //                             //     style: TextStyle(
-                        //                             //         fontSize: 10,
-                        //                             //         color: Colors.black)),
-                        //                             //         Padding(padding: EdgeInsets.only(bottom: 16))
-                        //                           ],
-                        //                         ),
-                        //                       ),
-                        //                   ),
-                        //                   const SizedBox(
-                        //                     height: 10,
-                        //                   ),
-                        //                   const Text(
-                        //                     'Garagem',
-                        //                     style: TextStyle(fontSize: 11, color: Colors.black),
-                        //                   ),
-                        //                 ],
-                        //               ),
-                        //               Column(
-                        //                 children: [
-                        //                   Container(
-                        //                     width: 65,
-                        //                     height: 130,
-                        //                     decoration: BoxDecoration(
-                        //                       borderRadius: BorderRadius.circular(12),
-                        //                       border: Border.all(color: Colors.orange),
-                        //                     ),
-                        //                     child: Container(
-                        //                         child: const Column(
-                        //                           mainAxisAlignment:
-                        //                               MainAxisAlignment.center,
-                        //                           crossAxisAlignment:
-                        //                               CrossAxisAlignment.center,
-                        //                           children: [
-                        //                             Icon(Icons.garage_outlined,
-                        //                                 color: Colors.black),
-                        //                             Divider(
-                        //                               color: Colors.black,
-                        //                             ),
-                        //                             Text('Portão',
-                        //                               style: TextStyle(
-                        //                                   fontSize: 10,
-                        //                                   color: Colors.black)),
-                        //                             // Text('Porta',
-                        //                             //     style: TextStyle(
-                        //                             //         fontSize: 10,
-                        //                             //         color: Colors.black)),
-                        //                             // Text('Movimento',
-                        //                             //     style: TextStyle(
-                        //                             //         fontSize: 10,
-                        //                             //         color: Colors.black)),
-                        //                             //         Padding(padding: EdgeInsets.only(bottom: 16))
-                        //                           ],
-                        //                         ),
-                        //                       ),
-                        //                   ),
-                        //                   const SizedBox(
-                        //                     height: 10,
-                        //                   ),
-                        //                   const Text(
-                        //                     'Garagem',
-                        //                     style: TextStyle(fontSize: 11, color: Colors.black),
-                        //                   ),
-                        //                 ],
-                        //               ),
-                        //             ],
-                        //           ),
-                        //         ],
-                        //       ),
-                        //     ),
-                        //   ),
-                        // )
-                                            
-                                          
-                      
+                      const SizedBox(
+                        height: 5,
+                      ),
+                      GridView.count(
+                          physics: const NeverScrollableScrollPhysics(),
+                          childAspectRatio: 0.5,
+                          crossAxisCount: 4,
+                          shrinkWrap: true,
+                          children: [
+                            Column(
+                              children: [
+                                Expanded(
+                                  child: Container(
+                                    width: 65,
+                                    height: 130,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(12),
+                                      border: Border.all(color: Colors.orange),
+                                    ),
+                                    child: Container(
+                                      child: const Expanded(
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: [
+                                            Icon(
+                                                Icons.lightbulb_outline_rounded,
+                                                color: Color(0xffD35400)),
+                                            Divider(
+                                              color: Color(0xffD35400),
+                                            ),
+                                            Text(
+                                              'Luz principal',
+                                              style: TextStyle(
+                                                  fontSize: 10,
+                                                  color: Colors.black),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                const SizedBox(
+                                  height: 10,
+                                ),
+                                const Text(
+                                  'Sala',
+                                  style: TextStyle(
+                                      fontSize: 11, color: Colors.black),
+                                ),
+                              ],
+                            ),
+                            Column(
+                              children: [
+                                Expanded(
+                                  child: Container(
+                                    width: 65,
+                                    height: 130,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(12),
+                                      border: Border.all(color: Colors.orange),
+                                    ),
+                                    child: Container(
+                                      child: const Expanded(
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: [
+                                            Icon(Icons.security_outlined,
+                                                color: Color(0xffD35400)),
+                                            Divider(
+                                              color: Color(0xffD35400),
+                                            ),
+                                            Text(
+                                              'Porta',
+                                              style: TextStyle(
+                                                  fontSize: 10,
+                                                  color: Colors.black),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                const SizedBox(
+                                  height: 10,
+                                ),
+                                const Text(
+                                  'Sala',
+                                  style: TextStyle(
+                                      fontSize: 11, color: Colors.black),
+                                ),
+                              ],
+                            ),
+                            Column(
+                              children: [
+                                Expanded(
+                                  child: Container(
+                                    width: 65,
+                                    height: 130,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(12),
+                                      border: Border.all(color: Colors.orange),
+                                    ),
+                                    child: Container(
+                                      child: const Expanded(
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: [
+                                            Icon(
+                                                Icons.lightbulb_outline_rounded,
+                                                color: Color(0xffD35400)),
+                                            Divider(
+                                              color: Color(0xffD35400),
+                                            ),
+                                            Text(
+                                              'Luz quadro',
+                                              style: TextStyle(
+                                                  fontSize: 10,
+                                                  color: Colors.black),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                const SizedBox(
+                                  height: 10,
+                                ),
+                                const Text(
+                                  'Sala',
+                                  style: TextStyle(
+                                      fontSize: 11, color: Colors.black),
+                                ),
+                              ],
+                            ),
+                            Column(
+                              children: [
+                                Expanded(
+                                  child: Container(
+                                    width: 65,
+                                    height: 130,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(12),
+                                      border: Border.all(color: Colors.orange),
+                                    ),
+                                    child: Container(
+                                      child: const Expanded(
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: [
+                                            Icon(
+                                                Icons.lightbulb_outline_rounded,
+                                                color: Color(0xffD35400)),
+                                            Divider(
+                                              color: Color(0xffD35400),
+                                            ),
+                                            Text(
+                                              'Luz ambiente',
+                                              style: TextStyle(
+                                                  fontSize: 10,
+                                                  color: Colors.black),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                const SizedBox(
+                                  height: 10,
+                                ),
+                                const Text(
+                                  'Sala',
+                                  style: TextStyle(
+                                      fontSize: 11, color: Colors.black),
+                                ),
+                              ],
+                            ),
+                            Column(
+                              children: [
+                                Expanded(
+                                  child: Container(
+                                    width: 65,
+                                    height: 130,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(12),
+                                      border: Border.all(color: Colors.orange),
+                                    ),
+                                    child: Container(
+                                      child: const Expanded(
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: [
+                                            Icon(Icons.security_outlined,
+                                                color: Color(0xffD35400)),
+                                            Divider(
+                                              color: Color(0xffD35400),
+                                            ),
+                                            Text(
+                                              'Movimento',
+                                              style: TextStyle(
+                                                  fontSize: 10,
+                                                  color: Colors.black),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                const SizedBox(
+                                  height: 10,
+                                ),
+                                const Text(
+                                  'Sala',
+                                  style: TextStyle(
+                                      fontSize: 11, color: Colors.black),
+                                ),
+                              ],
+                            ),
+                            Column(
+                              children: [
+                                Expanded(
+                                  child: Container(
+                                    width: 65,
+                                    height: 130,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(12),
+                                      border: Border.all(color: Colors.orange),
+                                    ),
+                                    child: Container(
+                                      child: const Expanded(
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: [
+                                            Icon(Icons.garage_outlined,
+                                                color: Color(0xffD35400)),
+                                            Divider(
+                                              color: Color(0xffD35400),
+                                            ),
+                                            Text(
+                                              'Portão',
+                                              style: TextStyle(
+                                                  fontSize: 10,
+                                                  color: Colors.black),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                const SizedBox(
+                                  height: 10,
+                                ),
+                                const Text(
+                                  'Garagem',
+                                  style: TextStyle(
+                                      fontSize: 11, color: Colors.black),
+                                ),
+                              ],
+                            )
+                          ]),
+                      //                       Container(
+                      //   decoration: BoxDecoration(
+                      // color: const Color.fromRGBO(255, 255, 255, 0.3),
+                      // borderRadius: BorderRadius.circular(20)),
+                      //   child: Container(
+                      //     width: 320,
+                      //     height: 200,
+                      //     decoration: BoxDecoration(
+                      //       borderRadius: BorderRadius.circular(20.0),
+                      //       border: Border.all(
+                      //         color: Colors.transparent,
+                      //         width: 1.0,
+                      //       ),
+                      //     ),
+                      //     child: Padding(
+                      //       padding: const EdgeInsets.all(8.0),
+                      //       child: Column(
+                      //         mainAxisAlignment: MainAxisAlignment.center,
+                      //         children: [
+                      //           const Text(
+                      //             'Ambientes e Recursos',
+                      //             style: TextStyle(
+                      //                 fontSize: 15,
+                      //                 color: Color(0xffFF6600),
+                      //                 fontWeight: FontWeight.w500),
+                      //           ),
+                      //           const SizedBox(
+                      //             height: 5,
+                      //           ),
+                      //           Row(
+                      //             mainAxisAlignment: MainAxisAlignment.center,
+                      //             children: [
+                      //               Column(
+                      //                 children: [
+                      //                   Container(
+                      //                     width: 65,
+                      //                     height: 130,
+                      //                     decoration: BoxDecoration(
+                      //                       borderRadius: BorderRadius.circular(12),
+                      //                       border: Border.all(color: Colors.orange),
+                      //                     ),
+                      //                     child: Container(
+                      //                       child: const Expanded(
+                      //                         child: Column(
+                      //                           mainAxisAlignment: MainAxisAlignment.center,
+                      //                           crossAxisAlignment:
+                      //                               CrossAxisAlignment.center,
+                      //                           children: [
+                      //                             Icon(Icons.lightbulb_outline_rounded,
+                      //                                 color: Colors.black),
+                      //                             Divider(
+                      //                               color: Colors.black,
+                      //                             ),
+                      //                             Text(
+                      //                               'Luz principal',
+                      //                               style: TextStyle(
+                      //                                   fontSize: 10, color: Colors.black),
+                      //                             ),
+
+                      //                           ],
+                      //                         ),
+                      //                       ),
+                      //                     ),
+                      //                   ),
+                      //                   const SizedBox(
+                      //                     height: 10,
+                      //                   ),
+                      //                   const Text(
+                      //                     'Sala',
+                      //                     style: TextStyle(fontSize: 11, color: Colors.black),
+                      //                   ),
+                      //                 ],
+                      //               ),
+                      //               const SizedBox(
+                      //                 width: 10,
+                      //               ),
+                      //               Column(
+                      //                 children: [
+                      //                   Container(
+                      //                       width: 65,
+                      //                       height: 130,
+                      //                       decoration: BoxDecoration(
+                      //                         borderRadius: BorderRadius.circular(12),
+                      //                         border: Border.all(color: Colors.orange),
+                      //                       ),
+                      //                       child: Container(
+                      //                         child: const Column(
+                      //                           mainAxisAlignment:
+                      //                               MainAxisAlignment.center,
+                      //                           crossAxisAlignment:
+                      //                               CrossAxisAlignment.center,
+                      //                           children: [
+                      //                             Icon(Icons.lightbulb_outline_rounded,
+                      //                                 color: Colors.black),
+                      //                             Divider(
+                      //                               color: Colors.black,
+                      //                             ),
+                      //                             Text('Luz quadro',
+                      //                               style: TextStyle(
+                      //                                   fontSize: 10,
+                      //                                   color: Colors.black)),
+                      //                             // Text('Porta',
+                      //                             //     style: TextStyle(
+                      //                             //         fontSize: 10,
+                      //                             //         color: Colors.black)),
+                      //                             // Text('Movimento',
+                      //                             //     style: TextStyle(
+                      //                             //         fontSize: 10,
+                      //                             //         color: Colors.black)),
+                      //                             //         Padding(padding: EdgeInsets.only(bottom: 16))
+                      //                           ],
+                      //                         ),
+                      //                       )),
+                      //                   const SizedBox(
+                      //                     height: 10,
+                      //                   ),
+                      //                   const Text(
+                      //                     'Sala',
+                      //                     style: TextStyle(fontSize: 11, color: Colors.black),
+                      //                   ),
+                      //                 ],
+                      //               ),
+                      //               const SizedBox(
+                      //                 width: 10,
+                      //               ),
+                      //               Column(
+                      //                 children: [
+                      //                   Container(
+                      //                     width: 65,
+                      //                     height: 130,
+                      //                     decoration: BoxDecoration(
+                      //                       borderRadius: BorderRadius.circular(12),
+                      //                       border: Border.all(color: Colors.orange),
+                      //                     ),
+                      //                     child: Container(
+                      //                       child: const Column(
+                      //                         mainAxisAlignment: MainAxisAlignment.center,
+                      //                         crossAxisAlignment:
+                      //                             CrossAxisAlignment.center,
+                      //                         children: [
+                      //                           Icon(Icons.lightbulb_outline_rounded,
+                      //                               color: Colors.black),
+                      //                           Divider(
+                      //                             color: Colors.black,
+                      //                           ),
+                      //                           Text('Luz ambiente',
+                      //                               style: TextStyle(
+                      //                                   fontSize: 10,
+                      //                                   color: Colors.black)),
+                      //                           // Text(
+                      //                           //   'Portão',
+                      //                           //   style: TextStyle(
+                      //                           //       fontSize: 10, color: Colors.black),
+                      //                           // ),
+                      //                           // Padding(padding: EdgeInsets.only(bottom: 22))
+                      //                         ],
+                      //                       ),
+                      //                     ),
+                      //                   ),
+                      //                   const SizedBox(
+                      //                     height: 10,
+                      //                   ),
+                      //                   const Text(
+                      //                     'Sala',
+                      //                     style: TextStyle(fontSize: 11, color: Colors.black),
+                      //                   ),
+                      //                 ],
+                      //               ),
+                      //               const SizedBox(
+                      //                 width: 10,
+                      //               ),
+                      //               Column(
+                      //                 children: [
+                      //                   Container(
+                      //                     width: 65,
+                      //                     height: 130,
+                      //                     decoration: BoxDecoration(
+                      //                       borderRadius: BorderRadius.circular(12),
+                      //                       border: Border.all(color: Colors.orange),
+                      //                     ),
+                      //                     child: Container(
+                      //                         child: const Column(
+                      //                           mainAxisAlignment:
+                      //                               MainAxisAlignment.center,
+                      //                           crossAxisAlignment:
+                      //                               CrossAxisAlignment.center,
+                      //                           children: [
+                      //                             Icon(Icons.garage_outlined,
+                      //                                 color: Colors.black),
+                      //                             Divider(
+                      //                               color: Colors.black,
+                      //                             ),
+                      //                             Text('Portão',
+                      //                               style: TextStyle(
+                      //                                   fontSize: 10,
+                      //                                   color: Colors.black)),
+                      //                             // Text('Porta',
+                      //                             //     style: TextStyle(
+                      //                             //         fontSize: 10,
+                      //                             //         color: Colors.black)),
+                      //                             // Text('Movimento',
+                      //                             //     style: TextStyle(
+                      //                             //         fontSize: 10,
+                      //                             //         color: Colors.black)),
+                      //                             //         Padding(padding: EdgeInsets.only(bottom: 16))
+                      //                           ],
+                      //                         ),
+                      //                       ),
+                      //                   ),
+                      //                   const SizedBox(
+                      //                     height: 10,
+                      //                   ),
+                      //                   const Text(
+                      //                     'Garagem',
+                      //                     style: TextStyle(fontSize: 11, color: Colors.black),
+                      //                   ),
+                      //                 ],
+                      //               ),
+                      //               Column(
+                      //                 children: [
+                      //                   Container(
+                      //                     width: 65,
+                      //                     height: 130,
+                      //                     decoration: BoxDecoration(
+                      //                       borderRadius: BorderRadius.circular(12),
+                      //                       border: Border.all(color: Colors.orange),
+                      //                     ),
+                      //                     child: Container(
+                      //                         child: const Column(
+                      //                           mainAxisAlignment:
+                      //                               MainAxisAlignment.center,
+                      //                           crossAxisAlignment:
+                      //                               CrossAxisAlignment.center,
+                      //                           children: [
+                      //                             Icon(Icons.garage_outlined,
+                      //                                 color: Colors.black),
+                      //                             Divider(
+                      //                               color: Colors.black,
+                      //                             ),
+                      //                             Text('Portão',
+                      //                               style: TextStyle(
+                      //                                   fontSize: 10,
+                      //                                   color: Colors.black)),
+                      //                             // Text('Porta',
+                      //                             //     style: TextStyle(
+                      //                             //         fontSize: 10,
+                      //                             //         color: Colors.black)),
+                      //                             // Text('Movimento',
+                      //                             //     style: TextStyle(
+                      //                             //         fontSize: 10,
+                      //                             //         color: Colors.black)),
+                      //                             //         Padding(padding: EdgeInsets.only(bottom: 16))
+                      //                           ],
+                      //                         ),
+                      //                       ),
+                      //                   ),
+                      //                   const SizedBox(
+                      //                     height: 10,
+                      //                   ),
+                      //                   const Text(
+                      //                     'Garagem',
+                      //                     style: TextStyle(fontSize: 11, color: Colors.black),
+                      //                   ),
+                      //                 ],
+                      //               ),
+                      //             ],
+                      //           ),
+                      //         ],
+                      //       ),
+                      //     ),
+                      //   ),
+                      // )
                     ],
                   ),
                 ),
