@@ -40,7 +40,7 @@ class _RoomsPageState extends State<RoomsPage> {
       const Icon(
         Icons.lightbulb_outline_rounded,
       ),
-      false);
+      true);
   Resource r3 = Resource(
       'Porta',
       const Icon(
@@ -55,7 +55,7 @@ class _RoomsPageState extends State<RoomsPage> {
       const Icon(
         Icons.lightbulb_outline_rounded,
       ),
-      false);
+      true);
 
   Resource r7 = Resource(
       'Portão',
