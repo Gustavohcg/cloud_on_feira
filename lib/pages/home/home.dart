@@ -1,5 +1,4 @@
-import 'package:cloud_on_feira/widgets/bottom_navigation_bar.dart';
-import 'package:cloud_on_feira/widgets/drawer.dart';
+import 'package:cloud_on_feira/base_page.dart';
 import 'package:flutter/material.dart';
 
 class DashboardPage extends StatelessWidget {
@@ -1006,10 +1005,8 @@ class DashboardPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return 
-    Scaffold(
-      drawer: const MenuDrawer(),
-      extendBody: false,
+    return BasePage(
+      title: 'Dashboard',
       body: Container(
         decoration: const BoxDecoration(
             image: DecorationImage(
@@ -1050,7 +1047,6 @@ class DashboardPage extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: const SpiritBottomNavigationBar(),
     );
   }
 }
