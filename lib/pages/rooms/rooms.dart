@@ -354,7 +354,6 @@ class _RoomsPageState extends State<RoomsPage> {
                 scrollDirection: Axis.vertical,
                 slivers: <Widget>[
                   const SliverAppBar(
-                    pinned: true,
                     backgroundColor: Colors.transparent,
                     expandedHeight: 50,
                     elevation: 0,

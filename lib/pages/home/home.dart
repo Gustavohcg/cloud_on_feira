@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:cloud_on_feira/pages/rooms/rooms.dart';
 import 'package:cloud_on_feira/pages/scenes/scenes.dart';
 import 'package:cloud_on_feira/widgets/bottom_navigation_bar.dart';
 import 'package:cloud_on_feira/widgets/drawer.dart';
@@ -614,7 +613,6 @@ class _DashboardPageState extends State<DashboardPage> {
           shrinkWrap: true,
           slivers: [
             const SliverAppBar(
-              pinned: true,
               title: Text('Dashboard'),
               centerTitle: true,
               expandedHeight: 50.0,
