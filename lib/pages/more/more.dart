@@ -212,7 +212,6 @@ class MorePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BasePage(
-      title: 'Mais',
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(

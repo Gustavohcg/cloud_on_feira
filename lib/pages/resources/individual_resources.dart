@@ -361,6 +361,14 @@ class _IndividualResourcesState extends State<IndividualResources> {
                     '- Is triflex Connect',
                   ),
                 ],
+              ),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Text(
+                    '- Sensor magnético',
+                  ),
+                ],
               )
             ],
           ),

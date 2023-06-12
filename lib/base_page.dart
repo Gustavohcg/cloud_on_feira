@@ -8,9 +8,8 @@ import 'package:lottie/lottie.dart';
 import 'widgets/bottom_navigation_bar.dart';
 
 class BasePage extends StatefulWidget {
-  String title;
   Widget body;
-  BasePage({required this.title, required this.body, super.key});
+  BasePage({required this.body, super.key});
 
   @override
   State<BasePage> createState() => _BasePageState();
@@ -26,7 +25,12 @@ class BasePage extends StatefulWidget {
               icon: Lottie.asset('assets/siren.json',
                   fit: BoxFit.contain, height: 80),
               title: const Text('Disparo de alarme'),
-              content: Text('Alarme disparado pelo sensor no setor $setor'),
+              content: setor == 1
+                  ? const Text('Violação segurança na porta da sala')
+                  : setor == 2
+                      ? const Text('Detecção de movimento na sala')
+                      : const Text(
+                          'Violação de segurança no portão na garagem'),
               actions: <Widget>[
                 TextButton(
                   style: TextButton.styleFrom(
@@ -54,7 +58,7 @@ class _BasePageState extends State<BasePage> {
       drawer: const MenuDrawer(),
       extendBody: false,
       body: widget.body,
-      bottomNavigationBar:  SpiritBottomNavigationBar(),
+      bottomNavigationBar: const SpiritBottomNavigationBar(),
     );
   }
 }

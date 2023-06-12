@@ -340,14 +340,15 @@ class LightTheme {
         color: _primaryColor,
         size: 32,
       ),
-      selectedLabelStyle: TextStyle(color: _primaryColor),
+      selectedLabelStyle: TextStyle(color: _primaryColor,fontSize: 12),
       unselectedIconTheme: IconThemeData(
         color: _secondaryColorLight,
         size: 24,
       ),
-      unselectedLabelStyle: TextStyle(color: _secondaryColorLight),
+      unselectedLabelStyle: TextStyle(color: _secondaryColorLight,fontSize: 9),
       showSelectedLabels: false,
       showUnselectedLabels: false,
+      
       elevation: 6,
     );
   }

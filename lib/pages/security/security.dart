@@ -87,7 +87,7 @@ class _SecurityPageState extends State<SecurityPage> {
 
   @override
   Widget build(BuildContext context) {
-    return BasePage(title: 'Segurança', body: Column(
+    return BasePage( body: Column(
         children: [
           Expanded(
             child: Container(
@@ -133,7 +133,7 @@ class _SecurityPageState extends State<SecurityPage> {
                                 _dialogBuilder(context, 'total', armeTotal);
                                 if (armeTotal) {
                                   int numeroSorteado = random.nextInt(2) + 3;
-                                  int setor = random.nextInt(10) + 1;
+                                  int setor = random.nextInt(3) + 1;
                                   late Timer _timer;
                                   _timer = Timer(
                                       Duration(seconds: numeroSorteado), () {

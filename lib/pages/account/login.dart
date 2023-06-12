@@ -115,9 +115,8 @@ class _LoginPageState extends State<LoginPage> /* with LoginViewCommon  */ {
       if (!currentFocus.hasPrimaryFocus) {
         currentFocus.unfocus();
       }
-      Future.delayed(const Duration(seconds: 1)).then((value) => Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => const LoginAnimation())));
+      Navigator.push(context,
+          MaterialPageRoute(builder: (context) => const LoginAnimation()));
     }
   }
 
@@ -332,7 +331,7 @@ class _LoginPageState extends State<LoginPage> /* with LoginViewCommon  */ {
         // ignore: use_build_context_synchronously
         Navigator.push(context,
             MaterialPageRoute(builder: (context) => const LoginAnimation()));
-            return true;
+        return true;
       }
     }
     return false;

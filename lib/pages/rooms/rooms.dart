@@ -40,7 +40,7 @@ class _RoomsPageState extends State<RoomsPage> {
       const Icon(
         Icons.lightbulb_outline_rounded,
       ),
-      false);
+      true);
   Resource r3 = Resource(
       'Porta',
       const Icon(
@@ -55,7 +55,7 @@ class _RoomsPageState extends State<RoomsPage> {
       const Icon(
         Icons.lightbulb_outline_rounded,
       ),
-      false);
+      true);
 
   Resource r7 = Resource(
       'Portão',
@@ -339,7 +339,6 @@ class _RoomsPageState extends State<RoomsPage> {
   @override
   Widget build(BuildContext context) {
     return BasePage(
-      title: 'Ambientes',
       body: Column(
         children: [
           Expanded(
@@ -355,7 +354,6 @@ class _RoomsPageState extends State<RoomsPage> {
                 scrollDirection: Axis.vertical,
                 slivers: <Widget>[
                   const SliverAppBar(
-                    pinned: true,
                     backgroundColor: Colors.transparent,
                     expandedHeight: 50,
                     elevation: 0,
