@@ -62,10 +62,66 @@ class _DashboardPageState extends State<DashboardPage> {
   late Timer _timer;
 
   late Color borderColor = Colors.red;
+  late Color borderColor2 = Colors.red;
+  late Color borderColor3 = Colors.green;
+  late Color borderColor4 = Colors.green;
+  late Color borderColor5 = Colors.red;
+  late Color borderColor6 = Colors.red;
+  late Color borderColor7 = Colors.red;
+  late Color borderColor8 = Colors.red;
+  late Color borderColor9 = Colors.red;
 
   void changeBorderColor() {
     setState(() {
       borderColor = (borderColor == Colors.red) ? Colors.green : Colors.red;
+    });
+  }
+
+  void changeBorderColor2() {
+    setState(() {
+      borderColor2 = (borderColor2 == Colors.red) ? Colors.green : Colors.red;
+    });
+  }
+
+  void changeBorderColor3() {
+    setState(() {
+      borderColor3 = (borderColor3 == Colors.green) ? Colors.red : Colors.green;
+    });
+  }
+
+  void changeBorderColor4() {
+    setState(() {
+      borderColor4 = (borderColor4 == Colors.green) ? Colors.red : Colors.green;
+    });
+  }
+
+  void changeBorderColor5() {
+    setState(() {
+      borderColor5 = (borderColor5 == Colors.red) ? Colors.green : Colors.red;
+    });
+  }
+
+  void changeBorderColor6() {
+    setState(() {
+      borderColor6 = (borderColor6 == Colors.red) ? Colors.green : Colors.red;
+    });
+  }
+
+  void changeBorderColor7() {
+    setState(() {
+      borderColor7 = (borderColor7 == Colors.red) ? Colors.green : Colors.red;
+    });
+  }
+
+  void changeBorderColor8() {
+    setState(() {
+      borderColor8 = (borderColor8 == Colors.red) ? Colors.green : Colors.red;
+    });
+  }
+
+  void changeBorderColor9() {
+    setState(() {
+      borderColor9 = (borderColor9 == Colors.red) ? Colors.green : Colors.red;
     });
   }
 
@@ -76,127 +132,206 @@ class _DashboardPageState extends State<DashboardPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Container(
-              decoration: BoxDecoration(
-                  color: const Color.fromRGBO(255, 255, 255, 0.3),
-                  borderRadius: BorderRadius.circular(20)),
+            SingleChildScrollView(
               child: Container(
-                width: 320,
-                height: 200,
                 decoration: BoxDecoration(
-                  //  color: Colors.blue,
-                  borderRadius: BorderRadius.circular(20.0),
-                  border: Border.all(
-                    color: Colors.transparent,
-                    width: 1.0,
-                  ),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const Text(
-                        'Segurança',
-                        style: TextStyle(
-                            color: Color(0xffFF6600),
-                            fontSize: 15,
-                            fontWeight: FontWeight.w500),
+                    color: const Color.fromRGBO(255, 255, 255, 0.3),
+                    borderRadius: BorderRadius.circular(20)),
+                child: SingleChildScrollView(
+                  child: Container(
+                    decoration: BoxDecoration(
+                      //  color: Colors.blue,
+                      borderRadius: BorderRadius.circular(20.0),
+                      border: Border.all(
+                        color: Colors.transparent,
+                        width: 1.0,
                       ),
-                      const SizedBox(
-                        height: 5,
-                      ),
-                      Row(
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Column(
-                            children: [
-                              Container(
-                                width: 65,
-                                height: 130,
-                                decoration: BoxDecoration(
-                                    color: Colors.transparent,
-                                    borderRadius: BorderRadius.circular(12),
-                                    border: Border.all(color: Colors.orange)),
-                              ),
-                              const SizedBox(
-                                height: 10,
-                              ),
-                              const Text(
-                                'Texto',
-                                style: TextStyle(fontSize: 11),
-                              ),
-                            ],
+                          const Text(
+                            'Segurança',
+                            style: TextStyle(
+                                color: Color(0xffFF6600),
+                                fontSize: 15,
+                                fontWeight: FontWeight.w500),
                           ),
                           const SizedBox(
-                            width: 10,
+                            height: 5,
                           ),
-                          Column(
+                          GridView.count(
+                            physics: const NeverScrollableScrollPhysics(),
+                            childAspectRatio: 0.5,
+                            crossAxisCount: 4,
+                            shrinkWrap: true,
                             children: [
-                              Container(
-                                width: 65,
-                                height: 130,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(12),
-                                  border: Border.all(color: Colors.orange),
+                              GestureDetector(
+                                onTap: changeBorderColor7,
+                                child: Column(
+                                  children: [
+                                    Expanded(
+                                      child: Container(
+                                        width: 65,
+                                        height: 130,
+                                        decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(12),
+                                          border:
+                                              Border.all(color: borderColor7),
+                                        ),
+                                        child: Container(
+                                          child: Expanded(
+                                            child: Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.center,
+                                              children: [
+                                                Icon(Icons.security_outlined,
+                                                    color: borderColor7),
+                                                Divider(
+                                                  color: borderColor7,
+                                                ),
+                                                const Text(
+                                                  'Porta',
+                                                  style: TextStyle(
+                                                      fontSize: 10,
+                                                      color: Colors.black),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    const SizedBox(
+                                      height: 10,
+                                    ),
+                                    const Text(
+                                      'Sala',
+                                      style: TextStyle(
+                                          fontSize: 11, color: Colors.black),
+                                    ),
+                                    const SizedBox(
+                                      height: 10,
+                                    ),
+                                  ],
                                 ),
                               ),
-                              const SizedBox(
-                                height: 10,
-                              ),
-                              const Text(
-                                'Texto',
-                                style: TextStyle(fontSize: 11),
-                              ),
-                            ],
-                          ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          Column(
-                            children: [
-                              Container(
-                                width: 65,
-                                height: 130,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(12),
-                                  border: Border.all(color: Colors.orange),
+                              GestureDetector(
+                                onTap: changeBorderColor8,
+                                child: Column(
+                                  children: [
+                                    Expanded(
+                                      child: Container(
+                                        width: 65,
+                                        height: 130,
+                                        decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(12),
+                                          border:
+                                              Border.all(color: borderColor8),
+                                        ),
+                                        child: Container(
+                                          child: Expanded(
+                                            child: Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.center,
+                                              children: [
+                                                Icon(Icons.garage_outlined,
+                                                    color: borderColor8),
+                                                Divider(
+                                                  color: borderColor8,
+                                                ),
+                                                const Text(
+                                                  'Portão',
+                                                  style: TextStyle(
+                                                      fontSize: 10,
+                                                      color: Colors.black),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    const SizedBox(
+                                      height: 10,
+                                    ),
+                                    const Text(
+                                      'Garagem',
+                                      style: TextStyle(
+                                          fontSize: 11, color: Colors.black),
+                                    ),
+                                    const SizedBox(
+                                      height: 10,
+                                    ),
+                                  ],
                                 ),
                               ),
-                              const SizedBox(
-                                height: 10,
-                              ),
-                              const Text(
-                                'Texto',
-                                style: TextStyle(fontSize: 11),
-                              ),
-                            ],
-                          ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          Column(
-                            children: [
-                              Container(
-                                width: 65,
-                                height: 130,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(12),
-                                  border: Border.all(color: Colors.orange),
+                              GestureDetector(
+                                onTap: changeBorderColor9,
+                                child: Column(
+                                  children: [
+                                    Expanded(
+                                      child: Container(
+                                        width: 65,
+                                        height: 130,
+                                        decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(12),
+                                          border:
+                                              Border.all(color: borderColor9),
+                                        ),
+                                        child: Container(
+                                          child: Expanded(
+                                            child: Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.center,
+                                              children: [
+                                                Icon(Icons.security_outlined,
+                                                    color: borderColor9),
+                                                Divider(
+                                                  color: borderColor9,
+                                                ),
+                                                const Text(
+                                                  'Movimento',
+                                                  style: TextStyle(
+                                                      fontSize: 10,
+                                                      color: Colors.black),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    const SizedBox(
+                                      height: 10,
+                                    ),
+                                    const Text(
+                                      'Sala',
+                                      style: TextStyle(
+                                          fontSize: 11, color: Colors.black),
+                                    ),
+                                    const SizedBox(
+                                      height: 10,
+                                    ),
+                                  ],
                                 ),
-                              ),
-                              const SizedBox(
-                                height: 10,
-                              ),
-                              const Text(
-                                'Texto',
-                                style: TextStyle(fontSize: 11),
                               ),
                             ],
                           ),
                         ],
                       ),
-                    ],
+                    ),
                   ),
                 ),
               ),
@@ -307,14 +442,15 @@ class _DashboardPageState extends State<DashboardPage> {
                       const SizedBox(
                         height: 5,
                       ),
-                      GestureDetector(
-                        child: GridView.count(
-                          physics: const NeverScrollableScrollPhysics(),
-                          childAspectRatio: 0.5,
-                          crossAxisCount: 4,
-                          shrinkWrap: true,
-                          children: [
-                            Column(
+                      GridView.count(
+                        physics: const NeverScrollableScrollPhysics(),
+                        childAspectRatio: 0.5,
+                        crossAxisCount: 4,
+                        shrinkWrap: true,
+                        children: [
+                          GestureDetector(
+                            onTap: changeBorderColor,
+                            child: Column(
                               children: [
                                 Expanded(
                                   child: Container(
@@ -325,7 +461,7 @@ class _DashboardPageState extends State<DashboardPage> {
                                       border: Border.all(color: borderColor),
                                     ),
                                     child: Container(
-                                      child: const Expanded(
+                                      child: Expanded(
                                         child: Column(
                                           mainAxisAlignment:
                                               MainAxisAlignment.center,
@@ -334,11 +470,11 @@ class _DashboardPageState extends State<DashboardPage> {
                                           children: [
                                             Icon(
                                                 Icons.lightbulb_outline_rounded,
-                                                color: Color(0xffD35400)),
+                                                color: borderColor),
                                             Divider(
-                                              color: Color(0xffD35400),
+                                              color: borderColor,
                                             ),
-                                            Text(
+                                            const Text(
                                               'Luz principal',
                                               style: TextStyle(
                                                   fontSize: 10,
@@ -358,9 +494,15 @@ class _DashboardPageState extends State<DashboardPage> {
                                   style: TextStyle(
                                       fontSize: 11, color: Colors.black),
                                 ),
+                                const SizedBox(
+                                  height: 10,
+                                ),
                               ],
                             ),
-                            Column(
+                          ),
+                          GestureDetector(
+                            onTap: changeBorderColor2,
+                            child: Column(
                               children: [
                                 Expanded(
                                   child: Container(
@@ -368,10 +510,10 @@ class _DashboardPageState extends State<DashboardPage> {
                                     height: 130,
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(12),
-                                      border: Border.all(color: borderColor),
+                                      border: Border.all(color: borderColor2),
                                     ),
                                     child: Container(
-                                      child: const Expanded(
+                                      child: Expanded(
                                         child: Column(
                                           mainAxisAlignment:
                                               MainAxisAlignment.center,
@@ -379,11 +521,11 @@ class _DashboardPageState extends State<DashboardPage> {
                                               CrossAxisAlignment.center,
                                           children: [
                                             Icon(Icons.security_outlined,
-                                                color: Color(0xffD35400)),
+                                                color: borderColor2),
                                             Divider(
-                                              color: Color(0xffD35400),
+                                              color: borderColor2,
                                             ),
-                                            Text(
+                                            const Text(
                                               'Porta',
                                               style: TextStyle(
                                                   fontSize: 10,
@@ -403,9 +545,15 @@ class _DashboardPageState extends State<DashboardPage> {
                                   style: TextStyle(
                                       fontSize: 11, color: Colors.black),
                                 ),
+                                const SizedBox(
+                                  height: 10,
+                                ),
                               ],
                             ),
-                            Column(
+                          ),
+                          GestureDetector(
+                            onTap: changeBorderColor3,
+                            child: Column(
                               children: [
                                 Expanded(
                                   child: Container(
@@ -413,10 +561,10 @@ class _DashboardPageState extends State<DashboardPage> {
                                     height: 130,
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(12),
-                                      border: Border.all(color: borderColor),
+                                      border: Border.all(color: borderColor3),
                                     ),
                                     child: Container(
-                                      child: const Expanded(
+                                      child: Expanded(
                                         child: Column(
                                           mainAxisAlignment:
                                               MainAxisAlignment.center,
@@ -425,11 +573,11 @@ class _DashboardPageState extends State<DashboardPage> {
                                           children: [
                                             Icon(
                                                 Icons.lightbulb_outline_rounded,
-                                                color: Color(0xffD35400)),
+                                                color: borderColor3),
                                             Divider(
-                                              color: Color(0xffD35400),
+                                              color: borderColor3,
                                             ),
-                                            Text(
+                                            const Text(
                                               'Luz quadro',
                                               style: TextStyle(
                                                   fontSize: 10,
@@ -449,9 +597,15 @@ class _DashboardPageState extends State<DashboardPage> {
                                   style: TextStyle(
                                       fontSize: 11, color: Colors.black),
                                 ),
+                                const SizedBox(
+                                  height: 10,
+                                ),
                               ],
                             ),
-                            Column(
+                          ),
+                          GestureDetector(
+                            onTap: changeBorderColor4,
+                            child: Column(
                               children: [
                                 Expanded(
                                   child: Container(
@@ -459,10 +613,10 @@ class _DashboardPageState extends State<DashboardPage> {
                                     height: 130,
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(12),
-                                      border: Border.all(color: borderColor),
+                                      border: Border.all(color: borderColor4),
                                     ),
                                     child: Container(
-                                      child: const Expanded(
+                                      child: Expanded(
                                         child: Column(
                                           mainAxisAlignment:
                                               MainAxisAlignment.center,
@@ -471,11 +625,11 @@ class _DashboardPageState extends State<DashboardPage> {
                                           children: [
                                             Icon(
                                                 Icons.lightbulb_outline_rounded,
-                                                color: Color(0xffD35400)),
+                                                color: borderColor4),
                                             Divider(
-                                              color: Color(0xffD35400),
+                                              color: borderColor4,
                                             ),
-                                            Text(
+                                            const Text(
                                               'Luz ambiente',
                                               style: TextStyle(
                                                   fontSize: 10,
@@ -495,9 +649,15 @@ class _DashboardPageState extends State<DashboardPage> {
                                   style: TextStyle(
                                       fontSize: 11, color: Colors.black),
                                 ),
+                                const SizedBox(
+                                  height: 10,
+                                ),
                               ],
                             ),
-                            Column(
+                          ),
+                          GestureDetector(
+                            onTap: changeBorderColor5,
+                            child: Column(
                               children: [
                                 Expanded(
                                   child: Container(
@@ -505,10 +665,10 @@ class _DashboardPageState extends State<DashboardPage> {
                                     height: 130,
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(12),
-                                      border: Border.all(color: borderColor),
+                                      border: Border.all(color: borderColor5),
                                     ),
                                     child: Container(
-                                      child: const Expanded(
+                                      child: Expanded(
                                         child: Column(
                                           mainAxisAlignment:
                                               MainAxisAlignment.center,
@@ -516,11 +676,11 @@ class _DashboardPageState extends State<DashboardPage> {
                                               CrossAxisAlignment.center,
                                           children: [
                                             Icon(Icons.security_outlined,
-                                                color: Color(0xffD35400)),
+                                                color: borderColor5),
                                             Divider(
-                                              color: Color(0xffD35400),
+                                              color: borderColor5,
                                             ),
-                                            Text(
+                                            const Text(
                                               'Movimento',
                                               style: TextStyle(
                                                   fontSize: 10,
@@ -542,7 +702,10 @@ class _DashboardPageState extends State<DashboardPage> {
                                 ),
                               ],
                             ),
-                            Column(
+                          ),
+                          GestureDetector(
+                            onTap: changeBorderColor6,
+                            child: Column(
                               children: [
                                 Expanded(
                                   child: Container(
@@ -550,10 +713,10 @@ class _DashboardPageState extends State<DashboardPage> {
                                     height: 130,
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(12),
-                                      border: Border.all(color: borderColor),
+                                      border: Border.all(color: borderColor6),
                                     ),
                                     child: Container(
-                                      child: const Expanded(
+                                      child: Expanded(
                                         child: Column(
                                           mainAxisAlignment:
                                               MainAxisAlignment.center,
@@ -561,11 +724,11 @@ class _DashboardPageState extends State<DashboardPage> {
                                               CrossAxisAlignment.center,
                                           children: [
                                             Icon(Icons.garage_outlined,
-                                                color: Color(0xffD35400)),
+                                                color: borderColor6),
                                             Divider(
-                                              color: Color(0xffD35400),
+                                              color: borderColor6,
                                             ),
-                                            Text(
+                                            const Text(
                                               'Portão',
                                               style: TextStyle(
                                                   fontSize: 10,
@@ -586,9 +749,9 @@ class _DashboardPageState extends State<DashboardPage> {
                                       fontSize: 11, color: Colors.black),
                                 ),
                               ],
-                            )
-                          ],
-                        ),
+                            ),
+                          )
+                        ],
                       ),
                     ],
                   ),
