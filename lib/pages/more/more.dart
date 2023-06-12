@@ -1,5 +1,5 @@
+import 'package:cloud_on_feira/base_page.dart';
 import 'package:cloud_on_feira/pages/dispositivos/dispositivos.dart';
-import 'package:cloud_on_feira/widgets/bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -211,7 +211,8 @@ class MorePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return BasePage(
+      title: 'Mais',
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
@@ -240,7 +241,6 @@ class MorePage extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: const SpiritBottomNavigationBar(),
     );
   }
 }

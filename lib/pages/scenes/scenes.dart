@@ -1,7 +1,6 @@
 import 'dart:async';
 
-import 'package:cloud_on_feira/widgets/bottom_navigation_bar.dart';
-import 'package:cloud_on_feira/widgets/drawer.dart';
+import 'package:cloud_on_feira/base_page.dart';
 import 'package:cloud_on_feira/widgets/show_bottom_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
@@ -134,9 +133,8 @@ class _ScenesPageState extends State<ScenesPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      drawer: const MenuDrawer(),
-      extendBody: false,
+    return BasePage(
+      title: 'Cenas',
       body: Column(
         children: [
           Expanded(
@@ -150,7 +148,6 @@ class _ScenesPageState extends State<ScenesPage> {
                 scrollDirection: Axis.vertical,
                 slivers: <Widget>[
                   const SliverAppBar(
-                    pinned: true,
                     backgroundColor: Colors.transparent,
                     expandedHeight: 50,
                     elevation: 0,
@@ -188,7 +185,6 @@ class _ScenesPageState extends State<ScenesPage> {
           ),
         ],
       ),
-      bottomNavigationBar: const SpiritBottomNavigationBar(),
     );
   }
 }

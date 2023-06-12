@@ -1,7 +1,5 @@
+import 'package:cloud_on_feira/base_page.dart';
 import 'package:cloud_on_feira/pages/resources/individual_resources.dart';
-import 'package:cloud_on_feira/widgets/bottom_navigation_bar.dart';
-import 'package:cloud_on_feira/widgets/drawer.dart';
-import 'package:cloud_on_feira/widgets/fab_menu_button.dart';
 import 'package:flutter/material.dart';
 
 import '/widgets/waiting.dart';
@@ -340,9 +338,8 @@ class _RoomsPageState extends State<RoomsPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      drawer: const MenuDrawer(),
-      floatingActionButton: const FabMenuButton(),
+    return BasePage(
+      title: 'Ambientes',
       body: Column(
         children: [
           Expanded(
@@ -399,7 +396,6 @@ class _RoomsPageState extends State<RoomsPage> {
           )
         ],
       ),
-      bottomNavigationBar: SpiritBottomNavigationBar(),
     );
   }
 }

@@ -845,7 +845,8 @@ class DashboardPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return 
+    Scaffold(
       drawer: const MenuDrawer(),
       extendBody: false,
       body: Container(
@@ -856,7 +857,6 @@ class DashboardPage extends StatelessWidget {
           shrinkWrap: true,
           slivers: [
             const SliverAppBar(
-              pinned: true,
               title: Text('Dashboard'),
               centerTitle: true,
               expandedHeight: 50.0,
