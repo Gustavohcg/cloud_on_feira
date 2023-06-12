@@ -165,6 +165,7 @@ class _DispositivosPageState<T> extends State {
                           ),
                           children: <Widget>[
                             ListView.builder(
+                              physics: const NeverScrollableScrollPhysics(),
                               shrinkWrap: true,
                               itemCount: devices.length,
                               itemBuilder: (context, index) {
